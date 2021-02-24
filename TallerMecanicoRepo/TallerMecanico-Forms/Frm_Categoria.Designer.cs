@@ -130,6 +130,7 @@ namespace TallerMecanico_Forms
             this.gb_Controles.TabIndex = 1;
             this.gb_Controles.TabStop = false;
             this.gb_Controles.Text = "Botones";
+            this.gb_Controles.Enter += new System.EventHandler(this.gb_Controles_Enter);
             // 
             // btn_Salir
             // 
@@ -169,7 +170,7 @@ namespace TallerMecanico_Forms
             this.btn_Grabar.TabIndex = 1;
             this.btn_Grabar.Text = "Grabar";
             this.btn_Grabar.UseVisualStyleBackColor = true;
-            this.btn_Grabar.Click += new System.EventHandler(this.button2_Click);
+            this.btn_Grabar.Click += new System.EventHandler(this.btn_Grabar_Click);
             // 
             // btn_Nuevo
             // 

@@ -76,40 +76,47 @@ namespace TallerMecanico_Forms
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_Grabar_Click(object sender, EventArgs e)
         {
             int n = -1;
-            if (_nuevo)
+            try
             {
-                c = new Categoria(0, txt_Codigo.Text,
-                    txt_Nombre.Text,
-                    txt_Observacion.Text);
-                n = bl_categoria.Insertar(c);
-            }
-            else
-            {
-                c.Codigo = txt_Codigo.Text;
-                c.Nombre = txt_Nombre.Text;
-                c.Observacion = txt_Observacion.Text;
-                n = bl_categoria.Actualizar(c);
-            }
+                if (_nuevo)
+                {
+                    c = new Categoria(0, txt_Codigo.Text,
+                        txt_Nombre.Text,
+                        txt_Observacion.Text);
+                    n = bl_categoria.Insertar(c);
+                }
+                else
+                {
+                    c.Codigo = txt_Codigo.Text;
+                    c.Nombre = txt_Nombre.Text;
+                    c.Observacion = txt_Observacion.Text;
+                    n = bl_categoria.Actualizar(c);
+                }
 
-            if (n > 0)
-            {
-                MessageBox.Show("Datos Grabados Correctamente", "Aviso",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ActivarControlDatos(gb_Datos, false);
-                ActivarBoton(true);
-                dgv_Datos.Enabled = true;
-                LimpiarControl(gb_Datos);
-                btn_Editar.Text = "Editar";
-                lista = bl_categoria.Listar();
-                CargarDatos();
+                if (n > 0)
+                {
+                    MessageBox.Show("Datos Grabados Correctamente", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ActivarControlDatos(gb_Datos, false);
+                    ActivarBoton(true);
+                    dgv_Datos.Enabled = true;
+                    LimpiarControl(gb_Datos);
+                    btn_Editar.Text = "Editar";
+                    lista = bl_categoria.Listar();
+                    CargarDatos();
+                }
+                else
+                {
+                    MessageBox.Show("Error al grabar", "Aviso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al grabar", "Aviso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Aviso de error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -182,6 +189,11 @@ namespace TallerMecanico_Forms
         private void btn_Salir_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void gb_Controles_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

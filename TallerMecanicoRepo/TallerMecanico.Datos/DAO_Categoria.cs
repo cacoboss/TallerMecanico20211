@@ -14,7 +14,7 @@ namespace TallerMecanico.Datos
 {
     public class DAO_Categoria
     {
-        string _cadenaConexion;
+        string _cadenaConexion = null;
 
         public string CadenaConexion
         {
@@ -23,7 +23,7 @@ namespace TallerMecanico.Datos
                 if(_cadenaConexion == null)
                 {
                     _cadenaConexion =
-                        ConfigurationManager.ConnectionStrings["Conex"].ConnectionString;
+                        ConfigurationManager.ConnectionStrings["Conex2"].ConnectionString;
                 }
                 return _cadenaConexion;
             }
@@ -34,26 +34,35 @@ namespace TallerMecanico.Datos
         {
             List<Categoria> lista = new List<Categoria>();
 
-            using(SqlConnection con = new SqlConnection(CadenaConexion))
+            try
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("ListarCategorias", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataReader dr = cmd.ExecuteReader();
-                if(dr != null && dr.HasRows)
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
                 {
-                    while (dr.Read())
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("ListarCategorias", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr != null && dr.HasRows)
                     {
-                        int Id = (int)dr["Id"];
-                        string Codigo = (string)dr["Codigo"];
-                        string Nombre = (string)dr["Nombre"];
-                        string Observacion = (string)dr["Observacion"];
+                        while (dr.Read())
+                        {
+                            int Id = (int)dr["Id"];
+                            string Codigo = (string)dr["Codigo"];
+                            string Nombre = (string)dr["Nombre"];
+                            string Observacion = (string)dr["Observacion"];
 
-                        Categoria c = new Categoria(Id, Codigo, Nombre, Observacion);
-                        lista.Add(c);
+                            Categoria c = new Categoria(Id, Codigo, Nombre, Observacion);
+                            lista.Add(c);
+                        }
                     }
                 }
             }
+            catch(Exception e)
+            {
+
+            }
+
+            
             return lista;
         }
     
@@ -84,15 +93,23 @@ namespace TallerMecanico.Datos
         public int Insertar(Categoria categoria)
         {
             int n = -1;
-            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            try
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("InsertarCategoria", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Codigo", categoria.Codigo);
-                cmd.Parameters.AddWithValue("@Nombre", categoria.Nombre);
-                cmd.Parameters.AddWithValue("@Observacion", categoria.Observacion);
-                n = cmd.ExecuteNonQuery();
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("InsertarCategoria", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Codigo", categoria.Codigo);
+                    cmd.Parameters.AddWithValue("@Nombre", categoria.Nombre);
+                    cmd.Parameters.AddWithValue("@Observacion", categoria.Observacion);
+                    n = cmd.ExecuteNonQuery();
+                }
+            }
+
+            catch (Exception e)
+            {
+
             }
             
             return n;
@@ -101,16 +118,23 @@ namespace TallerMecanico.Datos
         public int Actualizar(Categoria categoria)
         {
             int n = -1;
-            using(SqlConnection con = new SqlConnection(CadenaConexion))
+            try
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("ActualizarCategoria", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@ID", categoria.Id);
-                cmd.Parameters.AddWithValue("@Codigo", categoria.Codigo);
-                cmd.Parameters.AddWithValue("@Nombew", categoria.Nombre);
-                cmd.Parameters.AddWithValue("@Observacion", categoria.Observacion);
-                n = cmd.ExecuteNonQuery();
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("ActualizarCategoria", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ID", categoria.Id);
+                    cmd.Parameters.AddWithValue("@Codigo", categoria.Codigo);
+                    cmd.Parameters.AddWithValue("@Nombre", categoria.Nombre);
+                    cmd.Parameters.AddWithValue("@Observacion", categoria.Observacion);
+                    n = cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
             return n;
         }
@@ -118,13 +142,20 @@ namespace TallerMecanico.Datos
         public int Eliminar (int Id)
         {
             int n = -1;
-            using(SqlConnection con = new SqlConnection(CadenaConexion))
+            try
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("EliminarCategoria", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@ID", Id);
-                n = cmd.ExecuteNonQuery();
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("EliminarCategoria", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ID", Id);
+                    n = cmd.ExecuteNonQuery();
+                }
+            }
+            catch(Exception ex)
+            {
+
             }
             return n;
         }
