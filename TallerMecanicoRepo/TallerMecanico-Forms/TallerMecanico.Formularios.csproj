@@ -52,10 +52,28 @@
     <Compile Include="Frm_Categoria.Designer.cs">
       <DependentUpon>Frm_Categoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_InicioSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_InicioSesion.Designer.cs">
+      <DependentUpon>Frm_InicioSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MenuPrincipal.Designer.cs">
+      <DependentUpon>Frm_MenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Frm_Categoria.resx">
       <DependentUpon>Frm_Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_InicioSesion.resx">
+      <DependentUpon>Frm_InicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MenuPrincipal.resx">
+      <DependentUpon>Frm_MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
