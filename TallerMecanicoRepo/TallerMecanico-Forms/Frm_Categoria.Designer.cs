@@ -60,62 +60,73 @@ namespace TallerMecanico_Forms
             this.gb_Datos.Controls.Add(this.label2);
             this.gb_Datos.Controls.Add(this.txt_Codigo);
             this.gb_Datos.Controls.Add(this.label1);
-            this.gb_Datos.Location = new System.Drawing.Point(24, 16);
+            this.gb_Datos.Location = new System.Drawing.Point(18, 13);
+            this.gb_Datos.Margin = new System.Windows.Forms.Padding(2);
             this.gb_Datos.Name = "gb_Datos";
-            this.gb_Datos.Size = new System.Drawing.Size(465, 198);
+            this.gb_Datos.Padding = new System.Windows.Forms.Padding(2);
+            this.gb_Datos.Size = new System.Drawing.Size(349, 161);
             this.gb_Datos.TabIndex = 0;
             this.gb_Datos.TabStop = false;
             this.gb_Datos.Text = "Datos de la Categoria";
+            this.gb_Datos.Enter += new System.EventHandler(this.gb_Datos_Enter);
             // 
             // txt_Observacion
             // 
-            this.txt_Observacion.Location = new System.Drawing.Point(107, 89);
+            this.txt_Observacion.Location = new System.Drawing.Point(80, 72);
+            this.txt_Observacion.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Observacion.Multiline = true;
             this.txt_Observacion.Name = "txt_Observacion";
-            this.txt_Observacion.Size = new System.Drawing.Size(335, 97);
+            this.txt_Observacion.Size = new System.Drawing.Size(252, 80);
             this.txt_Observacion.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 92);
+            this.label3.Location = new System.Drawing.Point(4, 75);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 17);
+            this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Observación";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txt_Nombre
             // 
-            this.txt_Nombre.Location = new System.Drawing.Point(107, 61);
+            this.txt_Nombre.Location = new System.Drawing.Point(80, 50);
+            this.txt_Nombre.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.Size = new System.Drawing.Size(335, 22);
+            this.txt_Nombre.Size = new System.Drawing.Size(252, 20);
             this.txt_Nombre.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 61);
+            this.label2.Location = new System.Drawing.Point(4, 50);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 17);
+            this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nombre";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txt_Codigo
             // 
-            this.txt_Codigo.Location = new System.Drawing.Point(107, 33);
+            this.txt_Codigo.Location = new System.Drawing.Point(80, 27);
+            this.txt_Codigo.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Codigo.Name = "txt_Codigo";
-            this.txt_Codigo.Size = new System.Drawing.Size(335, 22);
+            this.txt_Codigo.Size = new System.Drawing.Size(252, 20);
             this.txt_Codigo.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 36);
+            this.label1.Location = new System.Drawing.Point(4, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 17);
+            this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Código";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // gb_Controles
             // 
@@ -124,18 +135,21 @@ namespace TallerMecanico_Forms
             this.gb_Controles.Controls.Add(this.btn_Editar);
             this.gb_Controles.Controls.Add(this.btn_Grabar);
             this.gb_Controles.Controls.Add(this.btn_Nuevo);
-            this.gb_Controles.Location = new System.Drawing.Point(531, 15);
+            this.gb_Controles.Location = new System.Drawing.Point(398, 12);
+            this.gb_Controles.Margin = new System.Windows.Forms.Padding(2);
             this.gb_Controles.Name = "gb_Controles";
-            this.gb_Controles.Size = new System.Drawing.Size(244, 199);
+            this.gb_Controles.Padding = new System.Windows.Forms.Padding(2);
+            this.gb_Controles.Size = new System.Drawing.Size(183, 162);
             this.gb_Controles.TabIndex = 1;
             this.gb_Controles.TabStop = false;
             this.gb_Controles.Text = "Botones";
             // 
             // btn_Salir
             // 
-            this.btn_Salir.Location = new System.Drawing.Point(74, 164);
+            this.btn_Salir.Location = new System.Drawing.Point(56, 133);
+            this.btn_Salir.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(109, 23);
+            this.btn_Salir.Size = new System.Drawing.Size(82, 19);
             this.btn_Salir.TabIndex = 4;
             this.btn_Salir.Text = "Salir";
             this.btn_Salir.UseVisualStyleBackColor = true;
@@ -143,9 +157,10 @@ namespace TallerMecanico_Forms
             // 
             // btn_Eliminar
             // 
-            this.btn_Eliminar.Location = new System.Drawing.Point(74, 127);
+            this.btn_Eliminar.Location = new System.Drawing.Point(56, 103);
+            this.btn_Eliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Eliminar.Name = "btn_Eliminar";
-            this.btn_Eliminar.Size = new System.Drawing.Size(109, 23);
+            this.btn_Eliminar.Size = new System.Drawing.Size(82, 19);
             this.btn_Eliminar.TabIndex = 3;
             this.btn_Eliminar.Text = "Eliminar";
             this.btn_Eliminar.UseVisualStyleBackColor = true;
@@ -153,9 +168,10 @@ namespace TallerMecanico_Forms
             // 
             // btn_Editar
             // 
-            this.btn_Editar.Location = new System.Drawing.Point(74, 92);
+            this.btn_Editar.Location = new System.Drawing.Point(56, 75);
+            this.btn_Editar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Editar.Name = "btn_Editar";
-            this.btn_Editar.Size = new System.Drawing.Size(109, 23);
+            this.btn_Editar.Size = new System.Drawing.Size(82, 19);
             this.btn_Editar.TabIndex = 2;
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.UseVisualStyleBackColor = true;
@@ -163,9 +179,10 @@ namespace TallerMecanico_Forms
             // 
             // btn_Grabar
             // 
-            this.btn_Grabar.Location = new System.Drawing.Point(74, 57);
+            this.btn_Grabar.Location = new System.Drawing.Point(56, 46);
+            this.btn_Grabar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Grabar.Name = "btn_Grabar";
-            this.btn_Grabar.Size = new System.Drawing.Size(109, 23);
+            this.btn_Grabar.Size = new System.Drawing.Size(82, 19);
             this.btn_Grabar.TabIndex = 1;
             this.btn_Grabar.Text = "Grabar";
             this.btn_Grabar.UseVisualStyleBackColor = true;
@@ -173,9 +190,10 @@ namespace TallerMecanico_Forms
             // 
             // btn_Nuevo
             // 
-            this.btn_Nuevo.Location = new System.Drawing.Point(74, 21);
+            this.btn_Nuevo.Location = new System.Drawing.Point(56, 17);
+            this.btn_Nuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Nuevo.Name = "btn_Nuevo";
-            this.btn_Nuevo.Size = new System.Drawing.Size(109, 23);
+            this.btn_Nuevo.Size = new System.Drawing.Size(82, 19);
             this.btn_Nuevo.TabIndex = 0;
             this.btn_Nuevo.Text = "Nuevo";
             this.btn_Nuevo.UseVisualStyleBackColor = true;
@@ -190,12 +208,14 @@ namespace TallerMecanico_Forms
             this.Codigo,
             this.Nombre,
             this.Observacion});
-            this.dgv_Datos.Location = new System.Drawing.Point(24, 220);
+            this.dgv_Datos.Location = new System.Drawing.Point(18, 179);
+            this.dgv_Datos.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_Datos.Name = "dgv_Datos";
             this.dgv_Datos.RowHeadersWidth = 51;
             this.dgv_Datos.RowTemplate.Height = 24;
-            this.dgv_Datos.Size = new System.Drawing.Size(751, 218);
+            this.dgv_Datos.Size = new System.Drawing.Size(563, 177);
             this.dgv_Datos.TabIndex = 0;
+            this.dgv_Datos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Datos_CellContentClick);
             // 
             // Id
             // 
@@ -228,12 +248,13 @@ namespace TallerMecanico_Forms
             // 
             // Frm_Categoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.dgv_Datos);
             this.Controls.Add(this.gb_Controles);
             this.Controls.Add(this.gb_Datos);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Frm_Categoria";
             this.Text = "Mantenimiento Categorias";
             this.gb_Datos.ResumeLayout(false);

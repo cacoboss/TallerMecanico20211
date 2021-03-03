@@ -183,5 +183,25 @@ namespace TallerMecanico_Forms
         {
             Close();
         }
+
+        private void gb_Datos_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_Datos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

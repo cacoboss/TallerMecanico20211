@@ -33,27 +33,31 @@ namespace TallerMecanico.Datos
         public List<Categoria> Listar()
         {
             List<Categoria> lista = new List<Categoria>();
-
-            using(SqlConnection con = new SqlConnection(CadenaConexion))
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("ListarCategorias", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataReader dr = cmd.ExecuteReader();
-                if(dr != null && dr.HasRows)
+          
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
                 {
-                    while (dr.Read())
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("ListarCategorias", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr != null && dr.HasRows)
                     {
-                        int Id = (int)dr["Id"];
-                        string Codigo = (string)dr["Codigo"];
-                        string Nombre = (string)dr["Nombre"];
-                        string Observacion = (string)dr["Observacion"];
+                        while (dr.Read())
 
-                        Categoria c = new Categoria(Id, Codigo, Nombre, Observacion);
-                        lista.Add(c);
+                        {
+                            int Id = (int)dr["Id"];
+                            string Codigo = (string)dr["Codigo"];
+                            string Nombre = (string)dr["Nombre"];
+                            string Observacion = (string)dr["Observacion"];
+
+                            Categoria c = new Categoria(Id, Codigo, Nombre, Observacion);
+                            lista.Add(c);
+                        }
                     }
                 }
-            }
+          
+
+            
             return lista;
         }
     
@@ -65,7 +69,7 @@ namespace TallerMecanico.Datos
                 con.Open();
                 SqlCommand cmd = new SqlCommand("TraerCategoriaPorId", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@ID", Id);
+                cmd.Parameters.AddWithValue("@Id", Id);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if(dr != null && dr.HasRows)
                 {
@@ -81,6 +85,7 @@ namespace TallerMecanico.Datos
             return c;
         }
     
+
         public int Insertar(Categoria categoria)
         {
             int n = -1;
@@ -98,6 +103,7 @@ namespace TallerMecanico.Datos
             return n;
         }
 
+
         public int Actualizar(Categoria categoria)
         {
             int n = -1;
@@ -106,9 +112,9 @@ namespace TallerMecanico.Datos
                 con.Open();
                 SqlCommand cmd = new SqlCommand("ActualizarCategoria", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@ID", categoria.Id);
+                cmd.Parameters.AddWithValue("@Id", categoria.Id);
                 cmd.Parameters.AddWithValue("@Codigo", categoria.Codigo);
-                cmd.Parameters.AddWithValue("@Nombew", categoria.Nombre);
+                cmd.Parameters.AddWithValue("@Nombre", categoria.Nombre);
                 cmd.Parameters.AddWithValue("@Observacion", categoria.Observacion);
                 n = cmd.ExecuteNonQuery();
             }
@@ -123,7 +129,7 @@ namespace TallerMecanico.Datos
                 con.Open();
                 SqlCommand cmd = new SqlCommand("EliminarCategoria", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@ID", Id);
+                cmd.Parameters.AddWithValue("@Id", Id);
                 n = cmd.ExecuteNonQuery();
             }
             return n;
