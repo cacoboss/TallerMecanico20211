@@ -30,5 +30,10 @@ namespace TallerMecanico.Entidades
             Contraseña = password;
             CedulaTrabajador = id;
         }
+        public CorreoElectronico(string dirEmail, string password)
+        {
+            DireccionCorreoElectronico = dirEmail;
+            Contraseña = password;
+        }
     }
 }

@@ -46,6 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO_Categoria.cs" />
+    <Compile Include="DAO_CorreoElectronico.cs" />
+    <Compile Include="DAO_TipoTrabajador.cs" />
+    <Compile Include="DAO_Trabajador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

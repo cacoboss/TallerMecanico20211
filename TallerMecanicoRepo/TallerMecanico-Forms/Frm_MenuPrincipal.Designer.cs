@@ -30,12 +30,12 @@ namespace TallerMecanico_Forms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_ModuloUsuarios = new System.Windows.Forms.Button();
             this.pnl_ModuloUsuarios = new System.Windows.Forms.Panel();
-            this.btn_CreacionUsuario = new System.Windows.Forms.Button();
-            this.btn_ActualizacionUsuario = new System.Windows.Forms.Button();
             this.btn_EliminarUsuario = new System.Windows.Forms.Button();
+            this.btn_ActualizacionUsuario = new System.Windows.Forms.Button();
+            this.btn_CreacionUsuario = new System.Windows.Forms.Button();
+            this.btn_ModuloUsuarios = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.pnl_ModuloUsuarios.SuspendLayout();
             this.SuspendLayout();
@@ -53,30 +53,6 @@ namespace TallerMecanico_Forms
             this.panel1.Size = new System.Drawing.Size(266, 586);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(266, 100);
-            this.panel2.TabIndex = 0;
-            // 
-            // btn_ModuloUsuarios
-            // 
-            this.btn_ModuloUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_ModuloUsuarios.FlatAppearance.BorderSize = 0;
-            this.btn_ModuloUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ModuloUsuarios.Location = new System.Drawing.Point(0, 100);
-            this.btn_ModuloUsuarios.Name = "btn_ModuloUsuarios";
-            this.btn_ModuloUsuarios.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btn_ModuloUsuarios.Size = new System.Drawing.Size(266, 45);
-            this.btn_ModuloUsuarios.TabIndex = 1;
-            this.btn_ModuloUsuarios.Text = "Modulo de Usuarios";
-            this.btn_ModuloUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ModuloUsuarios.UseVisualStyleBackColor = true;
-            this.btn_ModuloUsuarios.Click += new System.EventHandler(this.btn_ModuloUsuarios_Click);
-            // 
             // pnl_ModuloUsuarios
             // 
             this.pnl_ModuloUsuarios.Controls.Add(this.btn_EliminarUsuario);
@@ -88,20 +64,20 @@ namespace TallerMecanico_Forms
             this.pnl_ModuloUsuarios.Size = new System.Drawing.Size(266, 123);
             this.pnl_ModuloUsuarios.TabIndex = 2;
             // 
-            // btn_CreacionUsuario
+            // btn_EliminarUsuario
             // 
-            this.btn_CreacionUsuario.BackColor = System.Drawing.Color.Silver;
-            this.btn_CreacionUsuario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_CreacionUsuario.FlatAppearance.BorderSize = 0;
-            this.btn_CreacionUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CreacionUsuario.Location = new System.Drawing.Point(0, 0);
-            this.btn_CreacionUsuario.Name = "btn_CreacionUsuario";
-            this.btn_CreacionUsuario.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btn_CreacionUsuario.Size = new System.Drawing.Size(266, 40);
-            this.btn_CreacionUsuario.TabIndex = 0;
-            this.btn_CreacionUsuario.Text = "Creacion de Usuario";
-            this.btn_CreacionUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_CreacionUsuario.UseVisualStyleBackColor = false;
+            this.btn_EliminarUsuario.BackColor = System.Drawing.Color.Silver;
+            this.btn_EliminarUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_EliminarUsuario.FlatAppearance.BorderSize = 0;
+            this.btn_EliminarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_EliminarUsuario.Location = new System.Drawing.Point(0, 80);
+            this.btn_EliminarUsuario.Name = "btn_EliminarUsuario";
+            this.btn_EliminarUsuario.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btn_EliminarUsuario.Size = new System.Drawing.Size(266, 40);
+            this.btn_EliminarUsuario.TabIndex = 2;
+            this.btn_EliminarUsuario.Text = "Eliminar Usuarios";
+            this.btn_EliminarUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_EliminarUsuario.UseVisualStyleBackColor = false;
             // 
             // btn_ActualizacionUsuario
             // 
@@ -118,20 +94,45 @@ namespace TallerMecanico_Forms
             this.btn_ActualizacionUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ActualizacionUsuario.UseVisualStyleBackColor = false;
             // 
-            // btn_EliminarUsuario
+            // btn_CreacionUsuario
             // 
-            this.btn_EliminarUsuario.BackColor = System.Drawing.Color.Silver;
-            this.btn_EliminarUsuario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_EliminarUsuario.FlatAppearance.BorderSize = 0;
-            this.btn_EliminarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_EliminarUsuario.Location = new System.Drawing.Point(0, 80);
-            this.btn_EliminarUsuario.Name = "btn_EliminarUsuario";
-            this.btn_EliminarUsuario.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btn_EliminarUsuario.Size = new System.Drawing.Size(266, 40);
-            this.btn_EliminarUsuario.TabIndex = 2;
-            this.btn_EliminarUsuario.Text = "Eliminar Usuarios";
-            this.btn_EliminarUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_EliminarUsuario.UseVisualStyleBackColor = false;
+            this.btn_CreacionUsuario.BackColor = System.Drawing.Color.Silver;
+            this.btn_CreacionUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_CreacionUsuario.FlatAppearance.BorderSize = 0;
+            this.btn_CreacionUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CreacionUsuario.Location = new System.Drawing.Point(0, 0);
+            this.btn_CreacionUsuario.Name = "btn_CreacionUsuario";
+            this.btn_CreacionUsuario.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btn_CreacionUsuario.Size = new System.Drawing.Size(266, 40);
+            this.btn_CreacionUsuario.TabIndex = 0;
+            this.btn_CreacionUsuario.Text = "Creacion de Usuario";
+            this.btn_CreacionUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_CreacionUsuario.UseVisualStyleBackColor = false;
+            // 
+            // btn_ModuloUsuarios
+            // 
+            this.btn_ModuloUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_ModuloUsuarios.Enabled = false;
+            this.btn_ModuloUsuarios.FlatAppearance.BorderSize = 0;
+            this.btn_ModuloUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ModuloUsuarios.Location = new System.Drawing.Point(0, 100);
+            this.btn_ModuloUsuarios.Name = "btn_ModuloUsuarios";
+            this.btn_ModuloUsuarios.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btn_ModuloUsuarios.Size = new System.Drawing.Size(266, 45);
+            this.btn_ModuloUsuarios.TabIndex = 1;
+            this.btn_ModuloUsuarios.Text = "Modulo de Usuarios";
+            this.btn_ModuloUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ModuloUsuarios.UseVisualStyleBackColor = true;
+            this.btn_ModuloUsuarios.Click += new System.EventHandler(this.btn_ModuloUsuarios_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(266, 100);
+            this.panel2.TabIndex = 0;
             // 
             // Frm_MenuPrincipal
             // 

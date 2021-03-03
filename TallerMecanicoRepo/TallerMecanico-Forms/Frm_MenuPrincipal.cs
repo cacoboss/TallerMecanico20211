@@ -12,6 +12,8 @@ namespace TallerMecanico_Forms
 {
     public partial class Frm_MenuPrincipal : Form
     {
+
+
         public Frm_MenuPrincipal()
         {
             InitializeComponent();

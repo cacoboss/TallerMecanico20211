@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 
 namespace TallerMecanico.Datos
 {
-    public class DAO_CorreoElectronico
+    public class DAO_TipoTrabajador
     {
         string _cadenaConexion = null;
 
@@ -30,31 +30,40 @@ namespace TallerMecanico.Datos
             set => _cadenaConexion = value;
         }
 
-        public int TraerPorCorreoClave(string correo, string clave)
+        public TipoTrabajador TraerTipoPorID(int Id)
         {
-            int resultado = -1;
-
+            TipoTrabajador tipo = new TipoTrabajador();
             try
             {
                 using(SqlConnection con = new SqlConnection(CadenaConexion))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("dbo.CorreoElectronico_InicioSesion", con);
+                    SqlCommand cmd = new SqlCommand("dbo.TipoTrabajador_TraerTipoPorID", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@CORREOUSADO", correo);
-                    cmd.Parameters.AddWithValue("@CLAVEUSADA", clave);
+                    cmd.Parameters.AddWithValue("@ID", Id);
                     SqlDataReader dr = cmd.ExecuteReader();
-                    if(dr.HasRows && dr != null)
+                    if(dr != null && dr.HasRows)
                     {
-                        dr.Read();
-                        resultado = (int)dr["IdentificadorCorreo"];
+                        tipo.NombreCargo = (string)dr["NombreCargo"];
+                        tipo.DescripcionCargo = (string)dr["DescripcionCargo"];
+                        tipo.Permisos = new bool[]
+                        {
+                            (bool)dr["Permiso_FichaTecnica"],
+                            (bool)dr["Permiso_ListadoClientes"],
+                            (bool)dr["Permiso_ListadoCompras"],
+                            (bool)dr["Permiso_ListadoVentas"],
+                            (bool)dr["Permiso_Facturas"],
+                            (bool)dr["Permiso_Inventarios"],
+                            (bool)dr["Permiso_CreacionUsuarios"]
+                        };
                     }
                 }
+                
             }catch (Exception ex)
             {
 
             }
-            return resultado;
+            return tipo;
         }
     }
 }

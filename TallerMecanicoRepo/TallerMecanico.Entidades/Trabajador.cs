@@ -13,7 +13,10 @@ namespace TallerMecanico.Entidades
         public string Apellidos { get; set; }
         public long? Celular { get; set; }
         public int TipoTrabajador { get; set; }
-        public int? IdentificadorCorreo { get; set; }
+        public DateTime FechaCreacion { get; set; }
+        public DateTime FechaModificacion { get; set; }
+        public string CorreoElectronico { get; set; }
+        public string Clave { get; set; }
 
         // Constructores
 
@@ -22,21 +25,22 @@ namespace TallerMecanico.Entidades
             string Apellidos,
             long? Celular,
             int TipoTrabajador,
-            int? IdentificadorCorreo)
+            DateTime FechaCreacion,
+            DateTime FechaModificacion,
+            string Correo,
+            string Clave)
         {
             this.Cedula = Cedula;
             this.Nombres = Nombres;
             this.Celular = Celular;
             this.TipoTrabajador = TipoTrabajador;
-            this.IdentificadorCorreo = IdentificadorCorreo;
+            this.FechaCreacion = FechaCreacion;
+            this.FechaModificacion = FechaModificacion;
+            this.CorreoElectronico = Correo;
+            this.Clave = Clave;
         }
 
-        public Trabajador(long Cedula,
-            string Nombres,
-            string Apellidos,
-            int TipoTrabajador)
-            : this (Cedula, Nombres, 
-                  Apellidos, null, TipoTrabajador, null)
+        public Trabajador() : this(0, "", "", null, 0, DateTime.Now, DateTime.Now, "", "")
         {
 
         }

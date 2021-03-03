@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using TallerMecanico.Negocio;
+using TallerMecanico.Entidades;
+
 namespace TallerMecanico_Forms
 {
     public partial class Frm_InicioSesion : Form
@@ -21,7 +24,19 @@ namespace TallerMecanico_Forms
         {
             bool estaVacio = txt_Correo.Text != "" && txt__Clave.Text != "";
             if (estaVacio)
-                lbl_Verificacion.Text = txt_Correo.Text + txt__Clave.Text;
+            {
+                //lbl_Verificacion.Text = new BL_Trabajador().TraerTrabajadorPorCorreo(txt_Correo.Text, txt__Clave.Text).Nombres;
+                
+                // Obtener Trabajador
+                Trabajador trabajador = new BL_Trabajador().TraerTrabajadorPorCorreo(txt_Correo.Text, txt__Clave.Text);
+                // Obtener Permisos del Trabajador
+                TipoTrabajador tipo = new BL_TipoTrabajador().TraerTipoTrabajadorPorID(trabajador.TipoTrabajador);
+                this.Hide();
+                Frm_MenuPrincipal menuPrincipal = new Frm_MenuPrincipal();
+                menuPrincipal.Show();
+            }
+                
+            
             else
                 MessageBox.Show("Debe Ingresar Correo Electrónico y Contraseña",
                     "Datos Faltantes",

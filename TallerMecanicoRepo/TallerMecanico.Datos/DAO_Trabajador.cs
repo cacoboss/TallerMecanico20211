@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 
 namespace TallerMecanico.Datos
 {
-    public class DAO_CorreoElectronico
+    public class DAO_Trabajador
     {
         string _cadenaConexion = null;
 
@@ -30,31 +30,35 @@ namespace TallerMecanico.Datos
             set => _cadenaConexion = value;
         }
 
-        public int TraerPorCorreoClave(string correo, string clave)
-        {
-            int resultado = -1;
-
+        public Trabajador TraerPorCorreo(string correo, string clave)
+        { 
+            Trabajador trabajador = new Trabajador();
             try
             {
                 using(SqlConnection con = new SqlConnection(CadenaConexion))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("dbo.CorreoElectronico_InicioSesion", con);
+                    SqlCommand cmd = new SqlCommand("dbo.Trabajador_TraerTrabajadorPorCorreo", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@CORREOUSADO", correo);
-                    cmd.Parameters.AddWithValue("@CLAVEUSADA", clave);
+                    cmd.Parameters.AddWithValue("@CORREO", correo);
+                    cmd.Parameters.AddWithValue("@CLAVE", clave);
                     SqlDataReader dr = cmd.ExecuteReader();
-                    if(dr.HasRows && dr != null)
-                    {
-                        dr.Read();
-                        resultado = (int)dr["IdentificadorCorreo"];
+                    if(dr != null && dr.HasRows){
+                        trabajador.Cedula = (long)dr["Cedula"];
+                        trabajador.Nombres = (string)dr["Nombres"];
+                        trabajador.Apellidos = (string)dr["Apellidos"];
+                        trabajador.Celular = (long)dr["Celular"];
+                        trabajador.TipoTrabajador = (int)dr["TipoTrabajador"];
+                        trabajador.TipoTrabajador = (int)dr["TipoTrabajador"];
+                        trabajador.CorreoElectronico = correo;
+                        trabajador.Clave = clave;
                     }
                 }
-            }catch (Exception ex)
+            }catch(Exception ex)
             {
 
             }
-            return resultado;
+            return trabajador;
         }
     }
 }
