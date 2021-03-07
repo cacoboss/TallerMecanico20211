@@ -38,18 +38,19 @@ namespace TallerMecanico.Datos
                 using(SqlConnection con = new SqlConnection(CadenaConexion))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("dbo.Trabajador_TraerTrabajadorPorCorreo", con);
+                    SqlCommand cmd = new SqlCommand("Trabajador_TraerTrabajadorPorCorreo", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@CORREO", correo);
                     cmd.Parameters.AddWithValue("@CLAVE", clave);
                     SqlDataReader dr = cmd.ExecuteReader();
                     if(dr != null && dr.HasRows){
+                        dr.Read();
                         trabajador.Cedula = (long)dr["Cedula"];
                         trabajador.Nombres = (string)dr["Nombres"];
                         trabajador.Apellidos = (string)dr["Apellidos"];
                         trabajador.Celular = (long)dr["Celular"];
                         trabajador.TipoTrabajador = (int)dr["TipoTrabajador"];
-                        trabajador.TipoTrabajador = (int)dr["TipoTrabajador"];
+                        //trabajador.TipoTrabajador = (int)dr["TipoTrabajador"];
                         trabajador.CorreoElectronico = correo;
                         trabajador.Clave = clave;
                     }

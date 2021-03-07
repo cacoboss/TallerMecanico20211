@@ -31,8 +31,9 @@ namespace TallerMecanico_Forms
                 Trabajador trabajador = new BL_Trabajador().TraerTrabajadorPorCorreo(txt_Correo.Text, txt__Clave.Text);
                 // Obtener Permisos del Trabajador
                 TipoTrabajador tipo = new BL_TipoTrabajador().TraerTipoTrabajadorPorID(trabajador.TipoTrabajador);
+                tipo.Permisos = new bool[] { true, true, true, true, true, true, true };
                 this.Hide();
-                Frm_MenuPrincipal menuPrincipal = new Frm_MenuPrincipal();
+                Frm_MenuPrincipal menuPrincipal = new Frm_MenuPrincipal(trabajador, tipo);
                 menuPrincipal.Show();
             }
                 
