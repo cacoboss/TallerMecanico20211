@@ -31,9 +31,9 @@ namespace TallerMecanico_Forms
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_ModuloVentas = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Ventas_Proveedores = new System.Windows.Forms.Button();
+            this.btn_Ventas_Productos = new System.Windows.Forms.Button();
+            this.btn_Ventas_Categorias = new System.Windows.Forms.Button();
             this.btn_ModuloVentas = new System.Windows.Forms.Button();
             this.pnl_ModuloUsuarios = new System.Windows.Forms.Panel();
             this.btn_CreacionUsuario = new System.Windows.Forms.Button();
@@ -41,6 +41,7 @@ namespace TallerMecanico_Forms
             this.panel2 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pnl_FormularioHijo = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.pnl_ModuloVentas.SuspendLayout();
             this.pnl_ModuloUsuarios.SuspendLayout();
@@ -64,64 +65,64 @@ namespace TallerMecanico_Forms
             // 
             // pnl_ModuloVentas
             // 
-            this.pnl_ModuloVentas.Controls.Add(this.button4);
-            this.pnl_ModuloVentas.Controls.Add(this.button3);
-            this.pnl_ModuloVentas.Controls.Add(this.button2);
+            this.pnl_ModuloVentas.Controls.Add(this.btn_Ventas_Proveedores);
+            this.pnl_ModuloVentas.Controls.Add(this.btn_Ventas_Productos);
+            this.pnl_ModuloVentas.Controls.Add(this.btn_Ventas_Categorias);
             this.pnl_ModuloVentas.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_ModuloVentas.Location = new System.Drawing.Point(0, 236);
             this.pnl_ModuloVentas.Name = "pnl_ModuloVentas";
             this.pnl_ModuloVentas.Size = new System.Drawing.Size(266, 128);
             this.pnl_ModuloVentas.TabIndex = 4;
             // 
-            // button4
+            // btn_Ventas_Proveedores
             // 
-            this.button4.BackColor = System.Drawing.Color.Silver;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(0, 80);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(266, 40);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Proveedores";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn_Ventas_Proveedores.BackColor = System.Drawing.Color.Silver;
+            this.btn_Ventas_Proveedores.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Ventas_Proveedores.FlatAppearance.BorderSize = 0;
+            this.btn_Ventas_Proveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Ventas_Proveedores.Location = new System.Drawing.Point(0, 80);
+            this.btn_Ventas_Proveedores.Name = "btn_Ventas_Proveedores";
+            this.btn_Ventas_Proveedores.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btn_Ventas_Proveedores.Size = new System.Drawing.Size(266, 40);
+            this.btn_Ventas_Proveedores.TabIndex = 3;
+            this.btn_Ventas_Proveedores.Text = "Proveedores";
+            this.btn_Ventas_Proveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Ventas_Proveedores.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btn_Ventas_Productos
             // 
-            this.button3.BackColor = System.Drawing.Color.Silver;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(0, 40);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(266, 40);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Productos";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_Ventas_Productos.BackColor = System.Drawing.Color.Silver;
+            this.btn_Ventas_Productos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Ventas_Productos.FlatAppearance.BorderSize = 0;
+            this.btn_Ventas_Productos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Ventas_Productos.Location = new System.Drawing.Point(0, 40);
+            this.btn_Ventas_Productos.Name = "btn_Ventas_Productos";
+            this.btn_Ventas_Productos.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btn_Ventas_Productos.Size = new System.Drawing.Size(266, 40);
+            this.btn_Ventas_Productos.TabIndex = 2;
+            this.btn_Ventas_Productos.Text = "Productos";
+            this.btn_Ventas_Productos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Ventas_Productos.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btn_Ventas_Categorias
             // 
-            this.button2.BackColor = System.Drawing.Color.Silver;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(266, 40);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Categorias";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_Ventas_Categorias.BackColor = System.Drawing.Color.Silver;
+            this.btn_Ventas_Categorias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Ventas_Categorias.FlatAppearance.BorderSize = 0;
+            this.btn_Ventas_Categorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Ventas_Categorias.Location = new System.Drawing.Point(0, 0);
+            this.btn_Ventas_Categorias.Name = "btn_Ventas_Categorias";
+            this.btn_Ventas_Categorias.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btn_Ventas_Categorias.Size = new System.Drawing.Size(266, 40);
+            this.btn_Ventas_Categorias.TabIndex = 1;
+            this.btn_Ventas_Categorias.Text = "Categorias";
+            this.btn_Ventas_Categorias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Ventas_Categorias.UseVisualStyleBackColor = false;
+            this.btn_Ventas_Categorias.Click += new System.EventHandler(this.btn_Ventas_Categorias_Click);
             // 
             // btn_ModuloVentas
             // 
             this.btn_ModuloVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_ModuloVentas.Enabled = false;
             this.btn_ModuloVentas.FlatAppearance.BorderSize = 0;
             this.btn_ModuloVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ModuloVentas.Location = new System.Drawing.Point(0, 191);
@@ -161,7 +162,6 @@ namespace TallerMecanico_Forms
             // btn_ModuloUsuarios
             // 
             this.btn_ModuloUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_ModuloUsuarios.Enabled = false;
             this.btn_ModuloUsuarios.FlatAppearance.BorderSize = 0;
             this.btn_ModuloUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ModuloUsuarios.Location = new System.Drawing.Point(0, 100);
@@ -190,7 +190,7 @@ namespace TallerMecanico_Forms
             this.button5.BackColor = System.Drawing.Color.LightGray;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.button5.Image = global::TallerMecanico_Forms.Properties.Resources.CarIconSmall;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.Location = new System.Drawing.Point(0, 0);
@@ -210,11 +210,20 @@ namespace TallerMecanico_Forms
             this.panel4.Size = new System.Drawing.Size(1026, 100);
             this.panel4.TabIndex = 1;
             // 
+            // pnl_FormularioHijo
+            // 
+            this.pnl_FormularioHijo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnl_FormularioHijo.Location = new System.Drawing.Point(266, 100);
+            this.pnl_FormularioHijo.Name = "pnl_FormularioHijo";
+            this.pnl_FormularioHijo.Size = new System.Drawing.Size(1026, 486);
+            this.pnl_FormularioHijo.TabIndex = 2;
+            // 
             // Frm_MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1292, 586);
+            this.Controls.Add(this.pnl_FormularioHijo);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Name = "Frm_MenuPrincipal";
@@ -224,8 +233,9 @@ namespace TallerMecanico_Forms
             this.pnl_ModuloUsuarios.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
+
+        private System.Windows.Forms.Panel pnl_FormularioHijo;
 
         #endregion
 
@@ -236,9 +246,9 @@ namespace TallerMecanico_Forms
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_ModuloVentas;
         private System.Windows.Forms.Panel pnl_ModuloVentas;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_Ventas_Categorias;
+        private System.Windows.Forms.Button btn_Ventas_Proveedores;
+        private System.Windows.Forms.Button btn_Ventas_Productos;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel4;
     }
