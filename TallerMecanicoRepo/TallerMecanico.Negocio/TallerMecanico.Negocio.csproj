@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BL_Categoria.cs" />
     <Compile Include="BL_CorreoElectronico.cs" />
+    <Compile Include="BL_Proveedor.cs" />
     <Compile Include="BL_TipoTrabajador.cs" />
     <Compile Include="BL_Trabajador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

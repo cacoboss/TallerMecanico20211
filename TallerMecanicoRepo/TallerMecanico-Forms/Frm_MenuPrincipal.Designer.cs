@@ -88,6 +88,7 @@ namespace TallerMecanico_Forms
             this.btn_Ventas_Proveedores.Text = "Proveedores";
             this.btn_Ventas_Proveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Ventas_Proveedores.UseVisualStyleBackColor = false;
+            this.btn_Ventas_Proveedores.Click += new System.EventHandler(this.btn_Ventas_Proveedores_Click);
             // 
             // btn_Ventas_Productos
             // 

@@ -38,6 +38,14 @@ SELECT
 	ISNULL(DescripcionProveedor,'Descripcion Vacia')
 FROM Proveedor;
 
+ALTER PROCEDURE SP_Proveedor_Listar
+AS
+SELECT
+	CodigoProveedor, 
+	ISNULL(NombreProveedor,'Nombre Vacio') AS NombreProveedor,
+	ISNULL(DescripcionProveedor,'Descripcion Vacia') AS DescripcionProveedor
+FROM Proveedor;
+
 -- SP: Traer por ID Proveedor
 CREATE PROCEDURE SP_Proveedor_TraerPorID
 	@ID		INT

@@ -74,8 +74,8 @@ namespace TallerMecanico.Datos
                         {
                             Proveedor p = new Proveedor();
                             p.CodigoProveedor = (int) dr["CodigoProveedor"];
-                            p.NombreProveedor = (string) dr["NombreProveedor"];
-                            p.DescripcionProveedor = (string) dr["DescripcionProveedor"];
+                            p.NombreProveedor = ((string) dr["NombreProveedor"]) != null ? (string) dr["NombreProveedor"] : "Valor Nulo" ;
+                            p.DescripcionProveedor = ((string) dr["DescripcionProveedor"]) != null ? (string) dr["DescripcionProveedor"] : "Valor Nulo";
                             lista.Add(p);
                         }
                     }
