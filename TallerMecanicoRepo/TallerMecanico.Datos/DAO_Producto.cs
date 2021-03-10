@@ -60,7 +60,7 @@ namespace TallerMecanico.Datos
             int n = -1;
             try
             {
-                using (SqlConnection con = new SqlConnection(_cadenaConexion))
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_Productos_Actualizar", con);
@@ -126,7 +126,7 @@ namespace TallerMecanico.Datos
                         producto.Nombre = (string) dr["NombreProducto"];
                         producto.CodigoCategoria = (int) dr["CodigoCategoria"];
                         producto.Marca = (string) dr["Marca"];
-                        producto.DescripcionProducto = (string) dr["DescripciónProducto"];
+                        producto.DescripcionProducto = (string) dr["DescripcionProducto"];
                         producto.ValorUnitarioCompra = (float) dr["ValorUnitarioCompra"];
                         producto.ValorUnitarioVenta = (float) dr["ValorUnitarioVenta"];
                     }
@@ -163,7 +163,7 @@ namespace TallerMecanico.Datos
                             producto.Nombre = (string) dr["NombreProducto"];
                             producto.CodigoCategoria = (int) dr["CodigoCategoria"];
                             producto.Marca = (string) dr["Marca"];
-                            producto.DescripcionProducto = (string) dr["DescripciónProducto"];
+                            producto.DescripcionProducto = (string) dr["DescripcionProducto"];
                             producto.ValorUnitarioCompra = (float) dr["ValorUnitarioCompra"];
                             producto.ValorUnitarioVenta = (float) dr["ValorUnitarioVenta"];
                             lista.Add(producto);

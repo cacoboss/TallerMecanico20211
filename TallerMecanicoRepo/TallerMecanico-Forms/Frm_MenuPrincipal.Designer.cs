@@ -60,7 +60,7 @@ namespace TallerMecanico_Forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(266, 586);
+            this.panel1.Size = new System.Drawing.Size(266, 826);
             this.panel1.TabIndex = 0;
             // 
             // pnl_ModuloVentas
@@ -209,7 +209,7 @@ namespace TallerMecanico_Forms
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(266, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1026, 100);
+            this.panel4.Size = new System.Drawing.Size(1085, 100);
             this.panel4.TabIndex = 1;
             // 
             // pnl_FormularioHijo
@@ -217,19 +217,20 @@ namespace TallerMecanico_Forms
             this.pnl_FormularioHijo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_FormularioHijo.Location = new System.Drawing.Point(266, 100);
             this.pnl_FormularioHijo.Name = "pnl_FormularioHijo";
-            this.pnl_FormularioHijo.Size = new System.Drawing.Size(1026, 486);
+            this.pnl_FormularioHijo.Size = new System.Drawing.Size(1085, 723);
             this.pnl_FormularioHijo.TabIndex = 2;
             // 
             // Frm_MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1292, 586);
+            this.ClientSize = new System.Drawing.Size(1351, 826);
             this.Controls.Add(this.pnl_FormularioHijo);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Name = "Frm_MenuPrincipal";
             this.Text = "Frm_MenuPrincipal";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CerrarApp);
             this.panel1.ResumeLayout(false);
             this.pnl_ModuloVentas.ResumeLayout(false);
             this.pnl_ModuloUsuarios.ResumeLayout(false);

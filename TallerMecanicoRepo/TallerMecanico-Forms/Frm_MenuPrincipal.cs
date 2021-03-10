@@ -104,5 +104,15 @@ namespace TallerMecanico_Forms
         {
             AbrirFormularioHijo(new Frm_Hijo_Producto());
         }
+
+        private void Frm_MenuPrincipal_Load(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void CerrarApp(object sender, FormClosedEventArgs e)
+        {
+            Close();
+        }
     }
 }

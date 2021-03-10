@@ -32,6 +32,12 @@ namespace TallerMecanico_Forms
         private void InitializeComponent()
         {
             this.dgv_Productos = new System.Windows.Forms.DataGridView();
+            this.ID_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grp_Controles = new System.Windows.Forms.GroupBox();
             this.txt_Descripcion = new System.Windows.Forms.TextBox();
             this.lbl_Descripcion = new System.Windows.Forms.Label();
@@ -59,12 +65,44 @@ namespace TallerMecanico_Forms
             // dgv_Productos
             // 
             this.dgv_Productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Productos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.ID_Producto, this.Nombre, this.Nombre_Categoria, this.VVenta, this.VCompra, this.Marca});
             this.dgv_Productos.Location = new System.Drawing.Point(15, 345);
             this.dgv_Productos.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_Productos.Name = "dgv_Productos";
             this.dgv_Productos.RowTemplate.Height = 24;
             this.dgv_Productos.Size = new System.Drawing.Size(970, 202);
             this.dgv_Productos.TabIndex = 0;
+            // 
+            // ID_Producto
+            // 
+            this.ID_Producto.HeaderText = "ID";
+            this.ID_Producto.Name = "ID_Producto";
+            this.ID_Producto.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre Producto";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Nombre_Categoria
+            // 
+            this.Nombre_Categoria.HeaderText = "Nombre Categoria";
+            this.Nombre_Categoria.Name = "Nombre_Categoria";
+            // 
+            // VVenta
+            // 
+            this.VVenta.HeaderText = "V. Venta";
+            this.VVenta.Name = "VVenta";
+            // 
+            // VCompra
+            // 
+            this.VCompra.HeaderText = "V. Compra";
+            this.VCompra.Name = "VCompra";
+            // 
+            // Marca
+            // 
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
             // 
             // grp_Controles
             // 
@@ -221,6 +259,7 @@ namespace TallerMecanico_Forms
             this.btn_Cerrar.TabIndex = 4;
             this.btn_Cerrar.Text = "Cerrar Formulario";
             this.btn_Cerrar.UseVisualStyleBackColor = false;
+            this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
             // 
             // btn_Eliminar
             // 
@@ -234,6 +273,7 @@ namespace TallerMecanico_Forms
             this.btn_Eliminar.TabIndex = 3;
             this.btn_Eliminar.Text = "Eliminar Producto";
             this.btn_Eliminar.UseVisualStyleBackColor = false;
+            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // btn_Guardar
             // 
@@ -261,6 +301,7 @@ namespace TallerMecanico_Forms
             this.btn_Editar.TabIndex = 1;
             this.btn_Editar.Text = "Editar Producto";
             this.btn_Editar.UseVisualStyleBackColor = false;
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
             // btn_Nuevo
             // 
@@ -294,6 +335,13 @@ namespace TallerMecanico_Forms
             this.grp_Botones.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VVenta;
 
         private System.Windows.Forms.Button btn_Cerrar;
         private System.Windows.Forms.Button btn_Editar;
