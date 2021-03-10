@@ -104,6 +104,7 @@ namespace TallerMecanico_Forms
             this.btn_Ventas_Productos.Text = "Productos";
             this.btn_Ventas_Productos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Ventas_Productos.UseVisualStyleBackColor = false;
+            this.btn_Ventas_Productos.Click += new System.EventHandler(this.btn_Ventas_Productos_Click);
             // 
             // btn_Ventas_Categorias
             // 

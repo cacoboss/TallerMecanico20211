@@ -68,6 +68,12 @@
     <Compile Include="Frm_Categoria.Designer.cs">
       <DependentUpon>Frm_Categoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Hijo_Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Hijo_Producto.Designer.cs">
+      <DependentUpon>Frm_Hijo_Producto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Hijo_Proveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Frm_Categoria.resx">
       <DependentUpon>Frm_Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Hijo_Producto.resx">
+      <DependentUpon>Frm_Hijo_Producto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Hijo_Proveedor.resx">
       <DependentUpon>Frm_Hijo_Proveedor.cs</DependentUpon>

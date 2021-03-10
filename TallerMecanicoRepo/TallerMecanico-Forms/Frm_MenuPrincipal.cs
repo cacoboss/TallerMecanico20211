@@ -99,5 +99,10 @@ namespace TallerMecanico_Forms
         {
             AbrirFormularioHijo(new Frm_Hijo_Proveedor());
         }
+
+        private void btn_Ventas_Productos_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Frm_Hijo_Producto());
+        }
     }
 }

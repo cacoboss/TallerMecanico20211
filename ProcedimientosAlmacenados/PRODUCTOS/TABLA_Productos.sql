@@ -14,7 +14,7 @@ CREATE TABLE Productos(
 );
 --  -> Falta la Relacion 1:N de Producto Con Proveedores
 
---Creacion de la relacion de Productos con Proveedores_Productos
-ALTER TABLE PRODUCTOS
-	ADD CONSTRAINT FK_Producto_ProveedorProducto
-	FOREIGN KEY ()
+-- Agregar Nombre Producto
+ALTER TABLE Productos
+ADD
+	NombreProducto		NVARCHAR(50) NOT NULL;
