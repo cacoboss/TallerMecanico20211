@@ -214,7 +214,7 @@ namespace TallerMecanico_Forms
             // 
             // pnl_FormularioHijo
             // 
-            this.pnl_FormularioHijo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnl_FormularioHijo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_FormularioHijo.Location = new System.Drawing.Point(266, 100);
             this.pnl_FormularioHijo.Name = "pnl_FormularioHijo";
             this.pnl_FormularioHijo.Size = new System.Drawing.Size(1026, 486);
