@@ -20,5 +20,24 @@ namespace TallerMecanico.Negocio
             DAO_Trabajador dao_trabajador = new DAO_Trabajador();
             return dao_trabajador.TraerPorCorreo(correo, clave);
         }
+
+        public Trabajador TraerTrabajadorPorCedula(long cedula) {
+            DAO_Trabajador dao = new DAO_Trabajador();
+            return dao.TraerPorID(cedula);
+        }
+        
+        public List<Trabajador> ListarTrabajadores() {
+            DAO_Trabajador dao = new DAO_Trabajador();
+            return dao.Listar();
+        }
+
+        public int InsertarTrabajador(Trabajador trabajador) {
+            DAO_Trabajador dao = new DAO_Trabajador();
+            return dao.Insertar(trabajador);
+        }
+        public int ActualizarTrabajador(Trabajador trabajador) {
+            DAO_Trabajador dao = new DAO_Trabajador();
+            return dao.Actualizar(trabajador);
+        }
     }
 }

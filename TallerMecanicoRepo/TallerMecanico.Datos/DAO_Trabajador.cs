@@ -61,5 +61,90 @@ namespace TallerMecanico.Datos
             }
             return trabajador;
         }
+
+        public Trabajador TraerPorID(long ID) {
+            Trabajador trabajador = new Trabajador();
+            using (SqlConnection con = new SqlConnection(CadenaConexion)) {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SP_Trabajador_TraerPorID", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ID", ID);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows) {
+                    dr.Read();
+                    trabajador.Cedula = (long) dr["Cedula"];
+                    trabajador.Nombres = (string) dr["Nombres"];
+                    trabajador.Apellidos = (string) dr["Apellidos"];
+                    trabajador.Celular = (long) dr["Celular"];
+                    trabajador.CorreoElectronico = (string) dr["Correo"];
+                    trabajador.Clave = (string) dr["Clave"];
+                    trabajador.TipoTrabajador = (int) dr["TipoTrabajador"];
+                }
+            }
+
+            return trabajador;
+        }
+
+        public List<Trabajador> Listar() {
+            List<Trabajador> trabajadores = new List<Trabajador>();
+            using (SqlConnection con = new SqlConnection(CadenaConexion)) {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SP_Trabajador_Listar", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read()) {
+                    Trabajador trabajador = new Trabajador();
+                    trabajador.Cedula = (long) dr["Cedula"];
+                    trabajador.Nombres = (string) dr["Nombres"];
+                    trabajador.Apellidos = (string) dr["Apellidos"];
+                    trabajador.Celular = (long) dr["Celular"];
+                    trabajador.CorreoElectronico = (string) dr["Correo"];
+                    trabajador.Clave = (string) dr["Clave"];
+                    trabajador.TipoTrabajador = (int) dr["TipoTrabajador"];
+                    
+                    trabajadores.Add(trabajador);
+                }
+            }
+
+            return trabajadores;
+        }
+
+        public int Insertar(Trabajador trabajador) {
+            int n;
+            using (SqlConnection con = new SqlConnection(CadenaConexion)) {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SP_Trabajador_Insertar", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CEDULA", trabajador.Cedula);
+                cmd.Parameters.AddWithValue("@NOMBRES", trabajador.Nombres);
+                cmd.Parameters.AddWithValue("@APELLIDOS", trabajador.Apellidos);
+                cmd.Parameters.AddWithValue("@TIPO", trabajador.TipoTrabajador);
+                cmd.Parameters.AddWithValue("@CELULAR", trabajador.Celular);
+                cmd.Parameters.AddWithValue("@CORREO", trabajador.CorreoElectronico);
+                cmd.Parameters.AddWithValue("@CLAVE", trabajador.Clave);
+                n = cmd.ExecuteNonQuery();
+            }
+
+            return n;
+        }
+
+        public int Actualizar(Trabajador trabajador) {
+            int n;
+            using (SqlConnection con = new SqlConnection(CadenaConexion)) {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SP_Trabajador_Actualizar", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CEDULA", trabajador.Cedula);
+                cmd.Parameters.AddWithValue("@NOMBRES", trabajador.Nombres);
+                cmd.Parameters.AddWithValue("@APELLIDOS", trabajador.Apellidos);
+                cmd.Parameters.AddWithValue("@TIPO", trabajador.TipoTrabajador);
+                cmd.Parameters.AddWithValue("@CELULAR", trabajador.Celular);
+                cmd.Parameters.AddWithValue("@CORREO", trabajador.CorreoElectronico);
+                cmd.Parameters.AddWithValue("@CLAVE", trabajador.Clave);
+                n = cmd.ExecuteNonQuery();
+            }
+
+            return n;
+        }
     }
 }

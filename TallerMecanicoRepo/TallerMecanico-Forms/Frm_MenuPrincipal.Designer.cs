@@ -27,8 +27,7 @@ namespace TallerMecanico_Forms
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_ModuloVentas = new System.Windows.Forms.Panel();
             this.btn_Ventas_Proveedores = new System.Windows.Forms.Button();
@@ -73,6 +72,7 @@ namespace TallerMecanico_Forms
             this.pnl_ModuloVentas.Name = "pnl_ModuloVentas";
             this.pnl_ModuloVentas.Size = new System.Drawing.Size(266, 128);
             this.pnl_ModuloVentas.TabIndex = 4;
+            this.pnl_ModuloVentas.Visible = false;
             // 
             // btn_Ventas_Proveedores
             // 
@@ -125,6 +125,7 @@ namespace TallerMecanico_Forms
             // btn_ModuloVentas
             // 
             this.btn_ModuloVentas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_ModuloVentas.Enabled = false;
             this.btn_ModuloVentas.FlatAppearance.BorderSize = 0;
             this.btn_ModuloVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ModuloVentas.Location = new System.Drawing.Point(0, 191);
@@ -145,6 +146,7 @@ namespace TallerMecanico_Forms
             this.pnl_ModuloUsuarios.Name = "pnl_ModuloUsuarios";
             this.pnl_ModuloUsuarios.Size = new System.Drawing.Size(266, 46);
             this.pnl_ModuloUsuarios.TabIndex = 2;
+            this.pnl_ModuloUsuarios.Visible = false;
             // 
             // btn_CreacionUsuario
             // 
@@ -160,10 +162,12 @@ namespace TallerMecanico_Forms
             this.btn_CreacionUsuario.Text = "Usuarios";
             this.btn_CreacionUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_CreacionUsuario.UseVisualStyleBackColor = false;
+            this.btn_CreacionUsuario.Click += new System.EventHandler(this.btn_CreacionUsuario_Click);
             // 
             // btn_ModuloUsuarios
             // 
             this.btn_ModuloUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_ModuloUsuarios.Enabled = false;
             this.btn_ModuloUsuarios.FlatAppearance.BorderSize = 0;
             this.btn_ModuloUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ModuloUsuarios.Location = new System.Drawing.Point(0, 100);

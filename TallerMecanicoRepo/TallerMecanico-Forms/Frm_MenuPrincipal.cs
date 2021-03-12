@@ -25,15 +25,37 @@ namespace TallerMecanico_Forms
             InitializeComponent();
             this.trabajador = trabajador;
             this.tipo = tipo;
-            //HabilitarFuncionalidades();
-            //EsconderSubMenus();
+            HabilitarFuncionalidades();
+            EsconderSubMenus();
         }
 
         private void HabilitarFuncionalidades()
         {
+            btn_ModuloUsuarios.Enabled = false;
+            btn_ModuloUsuarios.Enabled = false;
+            if (tipo.Permisos[0])
+            {
+                
+            }
+            if (tipo.Permisos[1])
+            {
+                
+            }
+            if (tipo.Permisos[2])
+            {
+                
+            }
             if (tipo.Permisos[3])
             {
-                btn_ModuloUsuarios.Enabled = true;
+                btn_ModuloVentas.Enabled = true;
+            }
+            if (tipo.Permisos[4])
+            {
+                
+            }
+            if (tipo.Permisos[5])
+            {
+                
             }
             if (tipo.Permisos[6])
             {
@@ -79,6 +101,9 @@ namespace TallerMecanico_Forms
         {
             MostrarSubMenu(pnl_ModuloUsuarios);
         }
+        private void btn_CreacionUsuario_Click(object sender, EventArgs e) {
+            AbrirFormularioHijo(new Frm_Hijo_Trabajadores());
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -114,5 +139,7 @@ namespace TallerMecanico_Forms
         {
             Close();
         }
+
+        
     }
 }

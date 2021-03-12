@@ -20,5 +20,10 @@ namespace TallerMecanico.Negocio
             DAO_TipoTrabajador dao_tipo = new DAO_TipoTrabajador();
             return dao_tipo.TraerTipoPorID(Id);
         }
+
+        public List<TipoTrabajador> ListarTipoTrabajador() {
+            DAO_TipoTrabajador dao = new DAO_TipoTrabajador();
+            return dao.Listar();
+        }
     }
 }

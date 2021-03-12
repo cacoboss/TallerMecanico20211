@@ -27,6 +27,8 @@ namespace TallerMecanico_Forms
                 {
                     if (cajaTexto.GetType() == typeof(TextBox))
                         ((TextBox) cajaTexto).Enabled = estado;
+                    if (cajaTexto.GetType() == typeof(ComboBox))
+                        ((ComboBox) cajaTexto).Enabled = estado;
                 }
             }
             catch (Exception e)
