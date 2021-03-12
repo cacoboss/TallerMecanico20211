@@ -146,5 +146,18 @@ namespace TallerMecanico.Datos
 
             return n;
         }
+
+        public int Eliminar(long ID) {
+            int n;
+            using (SqlConnection con = new SqlConnection(CadenaConexion)) {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SP_Trabajador_Eliminar", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ID", ID);
+                n = cmd.ExecuteNonQuery();
+            }
+
+            return n;
+        }
     }
 }

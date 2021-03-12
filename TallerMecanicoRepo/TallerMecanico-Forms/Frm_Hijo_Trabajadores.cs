@@ -179,5 +179,19 @@ namespace TallerMecanico_Forms {
             grp_Controles.Text = "Controles Bloqueados";
             CargarDatos();
         }
+
+        private void btn_Eliminar_Click(object sender, EventArgs e) {
+            if (dgv_Trabajadores.RowCount > 0) {
+                Trabajador t =
+                    new BL_Trabajador().TraerTrabajadorPorCedula(
+                        (long) (dgv_Trabajadores[0, dgv_Trabajadores.CurrentRow.Index].Value));
+                new BL_Trabajador().EliminarTrabajador(t.Cedula);
+                EncenderControlesBotones(new []{true, true, false, true});
+                ActivarCajasTexto(grp_Controles, false);
+                grp_Controles.Text = "Controles Bloqueados";
+                LimpiarCajaTexto(grp_Controles);
+                CargarDatos();
+            }
+        }
     }
 }

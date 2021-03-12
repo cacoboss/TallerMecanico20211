@@ -39,5 +39,10 @@ namespace TallerMecanico.Negocio
             DAO_Trabajador dao = new DAO_Trabajador();
             return dao.Actualizar(trabajador);
         }
+
+        public int EliminarTrabajador(long ID) {
+            DAO_Trabajador dao = new DAO_Trabajador();
+            return dao.Eliminar(ID);
+        }
     }
 }

@@ -253,6 +253,7 @@ namespace TallerMecanico_Forms {
             this.btn_Eliminar.TabIndex = 3;
             this.btn_Eliminar.Text = "Eliminar Trabajador Seleccionado";
             this.btn_Eliminar.UseVisualStyleBackColor = false;
+            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // btn_Guardar
             // 
