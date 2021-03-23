@@ -90,3 +90,16 @@ SELECT
 FROM Productos
 WHERE CodigoProducto = @ID
 GO
+
+--Metodo Buscar por Nombre
+CREATE PROCEDURE SP_Productos_BuscarPorNombre
+    @CONSULTA       NVARCHAR(50)
+AS
+SELECT
+    CodigoProducto,
+    ISNULL(CodigoCategoria, 0) AS CodigoCategoria,
+    ISNULL(DescripcionProducto, 'Valor Nulo') AS DescripcionProducto,
+    ISNULL(Marca, 'Valor Nulo') as Marca,
+    ISNULL(NombreProducto, 'Valor Nulo') AS NombreProducto
+FROM Productos
+WHERE NombreProducto LIKE CONCAT('%',@CONSULTA,'%');

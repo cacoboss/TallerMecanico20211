@@ -179,5 +179,32 @@ namespace TallerMecanico.Datos
 
             return lista;
         }
+
+        public List<Producto> BuscarPorNombre(string nombre) {
+            List<Producto> resultado = new List<Producto>();
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion)) {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SP_Productos_BuscarPorNombre", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CONSULTA", nombre);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows) {
+                    while (dr.Read()) {
+                        Producto producto = new Producto();
+                        producto.CodigoProducto = (int) dr["CodigoProducto"];
+                        producto.Nombre = (string) dr["NombreProducto"];
+                        producto.CodigoCategoria = (int) dr["CodigoCategoria"];
+                        producto.Marca = (string) dr["Marca"];
+                        producto.DescripcionProducto = (string) dr["DescripcionProducto"];
+                        
+                        resultado.Add(producto);
+                    }
+                }
+            }
+
+            return resultado;
+        }
     }
 }
