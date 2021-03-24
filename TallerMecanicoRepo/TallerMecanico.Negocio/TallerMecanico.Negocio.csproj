@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TallerMecanico.Negocio</RootNamespace>
     <AssemblyName>TallerMecanico.Negocio</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,6 +34,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.2\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +49,7 @@
     <Compile Include="BL_CorreoElectronico.cs" />
     <Compile Include="BL_Producto.cs" />
     <Compile Include="BL_Proveedor.cs" />
+    <Compile Include="BL_ProveedorProductos.cs" />
     <Compile Include="BL_TipoTrabajador.cs" />
     <Compile Include="BL_Trabajador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,6 +63,9 @@
       <Project>{e65b0ac5-0cfb-4e65-b9b8-94a5fe8b7d29}</Project>
       <Name>TallerMecanico.Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

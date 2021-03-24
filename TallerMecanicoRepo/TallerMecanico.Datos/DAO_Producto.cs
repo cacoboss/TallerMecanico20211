@@ -18,7 +18,7 @@ namespace TallerMecanico.Datos
                 if (_cadenaConexion == null)
                 {
                     _cadenaConexion =
-                        ConfigurationManager.ConnectionStrings["Conex2"].ConnectionString;
+                        ConfigurationManager.ConnectionStrings["Conex"].ConnectionString;
                 }
 
                 return _cadenaConexion;
@@ -37,12 +37,12 @@ namespace TallerMecanico.Datos
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_Productos_Insertar", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@CODIGOCAT", producto.CodigoCategoria);
-                    cmd.Parameters.Add("@DESCRIPCION", producto.DescripcionProducto);
-                    cmd.Parameters.Add("@VALORCOMPRA", producto.ValorUnitarioCompra);
-                    cmd.Parameters.Add("@VALORVENTA", producto.ValorUnitarioVenta);
-                    cmd.Parameters.Add("@MARCA", producto.Marca);
-                    cmd.Parameters.Add("@NOMBRE", producto.Nombre);
+                    cmd.Parameters.AddWithValue("@CODIGOCAT", producto.CodigoCategoria);
+                    cmd.Parameters.AddWithValue("@DESCRIPCION", producto.DescripcionProducto);
+                    cmd.Parameters.AddWithValue("@VALORCOMPRA", producto.ValorUnitarioCompra);
+                    cmd.Parameters.AddWithValue("@MARCA", producto.Marca);
+                    cmd.Parameters.AddWithValue("@NOMBRE", producto.Nombre);
+                    cmd.Parameters.AddWithValue("@PROVEEDOR", producto.CodigoProveedor);
                     n = cmd.ExecuteNonQuery();
                     
                 }
@@ -65,13 +65,13 @@ namespace TallerMecanico.Datos
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_Productos_Actualizar", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@ID", producto.CodigoProducto);
-                    cmd.Parameters.Add("@CODIGOCAT", producto.CodigoCategoria);
-                    cmd.Parameters.Add("@DESCRIPCION", producto.DescripcionProducto);
-                    cmd.Parameters.Add("@VALORCOMPRA", producto.ValorUnitarioCompra);
-                    cmd.Parameters.Add("@VALORVENTA", producto.ValorUnitarioVenta);
-                    cmd.Parameters.Add("@MARCA", producto.Marca);
-                    cmd.Parameters.Add("@NOMBRE", producto.Nombre);
+                    cmd.Parameters.AddWithValue("@ID", producto.CodigoProducto);
+                    cmd.Parameters.AddWithValue("@CODIGOCAT", producto.CodigoCategoria);
+                    cmd.Parameters.AddWithValue("@DESCRIPCION", producto.DescripcionProducto);
+                    cmd.Parameters.AddWithValue("@VALORCOMPRA", producto.ValorUnitarioCompra);
+                    cmd.Parameters.AddWithValue("@MARCA", producto.Marca);
+                    cmd.Parameters.AddWithValue("@NOMBRE", producto.Nombre);
+                    cmd.Parameters.AddWithValue("@PROVEEDOR", producto.CodigoProveedor);
                     n = cmd.ExecuteNonQuery();
                 }
             }
@@ -94,7 +94,7 @@ namespace TallerMecanico.Datos
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_Productos_Eliminar", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@ID", ID);
+                    cmd.Parameters.AddWithValue("@ID", ID);
                     n = cmd.ExecuteNonQuery();
                 }
             }
@@ -117,7 +117,7 @@ namespace TallerMecanico.Datos
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_Productos_TraerPorID", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@ID", ID);
+                    cmd.Parameters.AddWithValue("@ID", ID);
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr.HasRows)
                     {
@@ -128,7 +128,8 @@ namespace TallerMecanico.Datos
                         producto.Marca = (string) dr["Marca"];
                         producto.DescripcionProducto = (string) dr["DescripcionProducto"];
                         producto.ValorUnitarioCompra = (float) dr["ValorUnitarioCompra"];
-                        producto.ValorUnitarioVenta = (float) dr["ValorUnitarioVenta"];
+                        producto.CodigoProveedor = (int)dr["CodigoProvedor"];
+
                     }
                 }
             }
@@ -149,6 +150,7 @@ namespace TallerMecanico.Datos
             {
                 using (SqlConnection con = new SqlConnection(CadenaConexion))
                 {
+
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_Productos_Listar", con);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -162,10 +164,10 @@ namespace TallerMecanico.Datos
                             producto.CodigoProducto = (int) dr["CodigoProducto"];
                             producto.Nombre = (string) dr["NombreProducto"];
                             producto.CodigoCategoria = (int) dr["CodigoCategoria"];
+                            producto.CodigoProveedor = (int)dr["CodigoProveedor"];
                             producto.Marca = (string) dr["Marca"];
                             producto.DescripcionProducto = (string) dr["DescripcionProducto"];
                             producto.ValorUnitarioCompra = (float) dr["ValorUnitarioCompra"];
-                            producto.ValorUnitarioVenta = (float) dr["ValorUnitarioVenta"];
                             lista.Add(producto);
                         }
                     }

@@ -20,3 +20,28 @@ C:\Users\ciro_\Clases\2021-1 Associate\TallerMecanico20211\TallerMecanicoRepo\Ta
 C:\Users\ciro_\Clases\2021-1 Associate\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico_Forms.Frm_Hijo_Proveedor.resources
 C:\Users\ciro_\Clases\2021-1 Associate\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico_Forms.Frm_Hijo_Producto.resources
 C:\Users\ciro_\Clases\2021-1 Associate\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico_Forms.Frm_Hijo_Trabajadores.resources
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\bin\Debug\TallerMecanico-Forms.exe.config
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\bin\Debug\TallerMecanico-Forms.exe
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\bin\Debug\TallerMecanico-Forms.pdb
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\bin\Debug\TallerMecanico.Entidades.dll
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\bin\Debug\TallerMecanico.Negocio.dll
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\bin\Debug\TallerMecanico.Datos.dll
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\bin\Debug\TallerMecanico.Entidades.pdb
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\bin\Debug\TallerMecanico.Negocio.pdb
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\bin\Debug\TallerMecanico.Datos.pdb
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico.Formularios.csprojAssemblyReference.cache
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico_Forms.Frm_Categoria.resources
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico_Forms.Frm_Hijo_Producto.resources
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico_Forms.Frm_Hijo_Proveedor.resources
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico_Forms.Frm_Hijo_Trabajadores.resources
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico_Forms.Frm_InicioSesion.resources
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico_Forms.Frm_MenuPrincipal.resources
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico_Forms.Properties.Resources.resources
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico.Formularios.csproj.GenerateResource.cache
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico.Formularios.csproj.CoreCompileInputs.cache
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico.Formularios.csproj.CopyComplete
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico-Forms.exe
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico-Forms.pdb
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\bin\Debug\System.Data.SqlClient.dll
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\bin\Debug\System.Data.SqlClient.xml
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico_Forms.Frm_ProductoProveedor.resources

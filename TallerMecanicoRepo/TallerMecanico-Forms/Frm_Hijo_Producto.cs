@@ -11,6 +11,7 @@ namespace TallerMecanico_Forms
     public partial class Frm_Hijo_Producto : Form
     {
         private List<Categoria> _categoriasDisponibles = new List<Categoria>();
+        private List<Proveedor> _proveedoresDisponibles = new List<Proveedor>();
 
         private int IndiceProductoSeleccionado;
         private bool NuevoProducto { get; set; }
@@ -20,20 +21,29 @@ namespace TallerMecanico_Forms
             get => _categoriasDisponibles;
             set => _categoriasDisponibles = value;
         }
-        
+
+        public List<Proveedor> ListadoProveedor
+        {
+            get => _proveedoresDisponibles;
+            set => _proveedoresDisponibles = value;
+        }
+
         public Frm_Hijo_Producto()
         {
             InitializeComponent();
             listadoCategoria = new BL_Categoria().Listar();
+            ListadoProveedor = new BL_Proveedor().Listar();
             //cmb_Categoria.Items.AddRange(listadoCategoria.ToArray());
+            //cmbProveedor.Items.AddRange(ListadoProveedor.ToArray());
             AgregarOpcionesDeCategoria();
-            ActivarBotones(new []{true, true, false, true, true});
+            AgregarOpcionesDeProveedor();
+            ActivarBotones(new[] { true, true, false, true, true });
             ActivarCajasTexto(grp_Controles, false);
             CargarDatos();
         }
 
         #region Logica del Funcionamiento del Formulario
-        
+
         private void AgregarOpcionesDeCategoria()
         {
             foreach (Categoria categoria in listadoCategoria)
@@ -41,8 +51,16 @@ namespace TallerMecanico_Forms
                 cmb_Categoria.Items.Add(categoria.Nombre);
             }
         }
-        
-        private void ActivarBotones(bool[] opciones )
+
+        private void AgregarOpcionesDeProveedor()
+        {
+            foreach (Proveedor proveedor in ListadoProveedor)
+            {
+                cmbProveedor.Items.Add(proveedor.NombreProveedor);
+            }
+        }
+
+        private void ActivarBotones(bool[] opciones)
         {
             btn_Nuevo.Enabled = opciones[0];
             btn_Editar.Enabled = opciones[1];
@@ -50,7 +68,7 @@ namespace TallerMecanico_Forms
             btn_Eliminar.Enabled = opciones[3];
             btn_Cerrar.Enabled = opciones[4];
         }
-        
+
         private void ActivarCajasTexto(Control contenedor, bool estado)
         {
             try
@@ -58,9 +76,9 @@ namespace TallerMecanico_Forms
                 foreach (var cajaTexto in contenedor.Controls)
                 {
                     if (cajaTexto.GetType() == typeof(TextBox))
-                        ((TextBox) cajaTexto).Enabled = estado;
+                        ((TextBox)cajaTexto).Enabled = estado;
                     if (cajaTexto.GetType() == typeof(ComboBox))
-                        ((ComboBox) cajaTexto).Enabled = estado;
+                        ((ComboBox)cajaTexto).Enabled = estado;
                 }
             }
             catch (Exception e)
@@ -77,7 +95,7 @@ namespace TallerMecanico_Forms
                 foreach (var cajaTexto in contenedor.Controls)
                 {
                     if (cajaTexto.GetType() == typeof(TextBox))
-                        ((TextBox) cajaTexto).Clear();
+                        ((TextBox)cajaTexto).Clear();
                 }
             }
             catch (Exception e)
@@ -117,9 +135,41 @@ namespace TallerMecanico_Forms
             return s;
         }
 
+
+        private int ProveedorSeleccionado(string nombre)
+        {
+            int id = 0;
+            foreach (Proveedor proveedor in ListadoProveedor)
+            {
+                if (proveedor.NombreProveedor == nombre)
+                {
+                    id = proveedor.CodigoProveedor;
+                    break;
+                }
+            }
+
+            return id;
+        }
+
+        private string ObtenerNombreProveedor(int id)
+        {
+            string s = "";
+            foreach (Proveedor Proveedor in ListadoProveedor)
+            {
+                if (Proveedor.CodigoProveedor == id)
+                {
+                    s = Proveedor.NombreProveedor;
+                    break;
+                }
+            }
+
+            return s;
+        }
+
         private void CargarDatos()
         {
             List<Producto> productos = new BL_Producto().Listar();
+
             if (productos.Count > 0)
             {
                 dgv_Productos.Rows.Clear();
@@ -129,19 +179,21 @@ namespace TallerMecanico_Forms
                     dgv_Productos.Rows.Add(p.CodigoProducto,
                         p.Nombre,
                         ObtenerNombreCategoria(p.CodigoCategoria),
-                        p.ValorUnitarioVenta,
                         p.ValorUnitarioCompra,
-                        p.Marca);
+                        p.Marca,
+                        ObtenerNombreProveedor(p.CodigoProveedor)
+                        );
                 }
             }
         }
         #endregion
-        
+
         private void btn_Nuevo_Click(object sender, EventArgs e)
         {
             NuevoProducto = true;
             listadoCategoria = new BL_Categoria().Listar();
-            ActivarBotones(new []{false, false, true, false, true});
+            ListadoProveedor = new BL_Proveedor().Listar();
+            ActivarBotones(new[] { false, false, true, false, true });
             ActivarCajasTexto(grp_Controles, true);
             grp_Controles.Text = "Creando Nuevo Producto";
             LimpiarCajaTexto(grp_Controles);
@@ -151,17 +203,17 @@ namespace TallerMecanico_Forms
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
             int resultado = -1;
-            
+
             if (NuevoProducto)
             {
                 //Guardando un nuevo Producto
                 Producto producto = new Producto
                 {
+                    
+                    CodigoProveedor = ProveedorSeleccionado((string)cmbProveedor.SelectedItem),
                     CodigoCategoria = CategoriaSeleccionada((string)cmb_Categoria.SelectedItem),
                     DescripcionProducto = txt_Descripcion.Text,
                     Marca = txt_Marca.Text,
-                    ValorUnitarioCompra = float.Parse(txt_Compra.Text) ,
-                    ValorUnitarioVenta = float.Parse(txt_Venta.Text),
                     Nombre = txt_Nombre.Text
                 };
                 resultado = new BL_Producto().Insertar(producto);
@@ -171,20 +223,19 @@ namespace TallerMecanico_Forms
                 //Guardando una modificacion de algo
                 Producto producto = new Producto
                 {
+                    CodigoProveedor = ProveedorSeleccionado((string)cmbProveedor.SelectedItem),
                     CodigoCategoria = CategoriaSeleccionada((string)cmb_Categoria.SelectedItem),
                     DescripcionProducto = txt_Descripcion.Text,
                     Marca = txt_Marca.Text,
-                    ValorUnitarioCompra = float.Parse(txt_Compra.Text) ,
-                    ValorUnitarioVenta = float.Parse(txt_Venta.Text),
                     Nombre = txt_Nombre.Text,
                     CodigoProducto = IndiceProductoSeleccionado
                 };
                 resultado = new BL_Producto().Actualizar(producto);
                 IndiceProductoSeleccionado = 0;
             }
-            
+
             LimpiarCajaTexto(grp_Controles);
-            ActivarBotones(new []{true, true, false, true, true});
+            ActivarBotones(new[] { true, true, false, true, true });
             ActivarCajasTexto(grp_Controles, false);
             CargarDatos();
             grp_Controles.Text = "Controles Bloqueados";
@@ -195,30 +246,30 @@ namespace TallerMecanico_Forms
         {
             NuevoProducto = false;
             listadoCategoria = new BL_Categoria().Listar();
-            ActivarBotones(new []{false, false, true, false, true});
+            ListadoProveedor = new BL_Proveedor().Listar();
+
+            ActivarBotones(new[] { false, false, true, false, true });
             ActivarCajasTexto(grp_Controles, true);
             grp_Controles.Text = "Editando Producto Existente";
             LimpiarCajaTexto(grp_Controles);
             txt_Nombre.Focus();
 
-            IndiceProductoSeleccionado = (int) (dgv_Productos[0, dgv_Productos.CurrentRow.Index].Value);
+            IndiceProductoSeleccionado = (int)(dgv_Productos[0, dgv_Productos.CurrentRow.Index].Value);
             Producto p = new BL_Producto().TraerPorID(IndiceProductoSeleccionado);
-            txt_Compra.Text = p.ValorUnitarioCompra.ToString();
             txt_Descripcion.Text = p.DescripcionProducto;
             txt_Marca.Text = p.Marca;
             txt_Nombre.Text = p.Nombre;
-            txt_Venta.Text = p.ValorUnitarioVenta.ToString();
         }
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
             if (dgv_Productos.RowCount > 0)
             {
-                IndiceProductoSeleccionado = (int) (dgv_Productos[0, dgv_Productos.CurrentRow.Index].Value);
+                IndiceProductoSeleccionado = (int)(dgv_Productos[0, dgv_Productos.CurrentRow.Index].Value);
                 Producto p = new BL_Producto().TraerPorID(IndiceProductoSeleccionado);
                 new BL_Producto().Eliminar(p.CodigoProducto);
                 LimpiarCajaTexto(grp_Controles);
-                ActivarBotones(new []{true, true, false, true, true});
+                ActivarBotones(new[] { true, true, false, true, true });
                 ActivarCajasTexto(grp_Controles, false);
                 CargarDatos();
             }
@@ -228,5 +279,10 @@ namespace TallerMecanico_Forms
         {
             Close();
         }
-    }  
+
+
+        
+
+       
+    }
 }

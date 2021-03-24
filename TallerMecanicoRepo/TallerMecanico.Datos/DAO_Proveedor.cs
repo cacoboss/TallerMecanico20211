@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,8 +15,10 @@ namespace TallerMecanico.Datos
 {
     public class DAO_Proveedor
     {
-        string _cadenaConexion = null;
-        
+
+
+
+        string _cadenaConexion;
         public string CadenaConexion
         {
             get
@@ -24,16 +26,20 @@ namespace TallerMecanico.Datos
                 if (_cadenaConexion == null)
                 {
                     _cadenaConexion =
-                        ConfigurationManager.ConnectionStrings["Conex2"].ConnectionString;
+                        ConfigurationManager.ConnectionStrings["Conex"].ConnectionString;
                 }
+
                 return _cadenaConexion;
             }
             set => _cadenaConexion = value;
         }
 
+
+
+
         public int Insertar(Proveedor proveedor)
         {
-            int ID = -11;
+            int ID = -1;
             try
             {
                 using (SqlConnection con = new SqlConnection(CadenaConexion))
@@ -74,7 +80,7 @@ namespace TallerMecanico.Datos
                         {
                             Proveedor p = new Proveedor();
                             p.CodigoProveedor = (int) dr["CodigoProveedor"];
-                            p.NombreProveedor = ((string) dr["NombreProveedor"]) != null ? (string) dr["NombreProveedor"] : "Valor Nulo" ;
+                            p.NombreProveedor =((string) dr["NombreProveedor"]) != null ? (string) dr["NombreProveedor"] : "Valor Nulo" ;
                             p.DescripcionProveedor = ((string) dr["DescripcionProveedor"]) != null ? (string) dr["DescripcionProveedor"] : "Valor Nulo";
                             lista.Add(p);
                         }
@@ -129,13 +135,16 @@ namespace TallerMecanico.Datos
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@ID", ID);
                     SqlDataReader dr = cmd.ExecuteReader();
-                
-                    if(dr != null & dr.HasRows)
+
+
+
+                    if (dr.HasRows)
                     {
                         dr.Read();
-                        proveedor.CodigoProveedor = (int) dr["CodigoProveedor"];
-                        proveedor.NombreProveedor = (string) dr["NombreProveedor"];
-                        proveedor.DescripcionProveedor = (string) dr["DescipcionProveedor"];
+                        proveedor.CodigoProveedor = (int)dr["CodigoProveedor"];
+                        proveedor.NombreProveedor = (string)dr["NombreProveedor"];
+                        proveedor.DescripcionProveedor = (string)dr["DescripcionProveedor"];
+                 
                     }
                 }
             }
@@ -150,10 +159,11 @@ namespace TallerMecanico.Datos
 
         public int Eliminar(int ID)
         {
-            int Identificador;
+
+            int Identificador=-1;
             try
             {
-                using (SqlConnection con = new SqlConnection(_cadenaConexion))
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_Proveedor_Eliminar", con);
@@ -164,8 +174,7 @@ namespace TallerMecanico.Datos
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                throw;
+             
             }
 
             return Identificador;

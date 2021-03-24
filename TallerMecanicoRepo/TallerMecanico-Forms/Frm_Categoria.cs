@@ -67,11 +67,12 @@ namespace TallerMecanico_Forms
                         lista[i].Nombre,
                         lista[i].Observacion);
             }
+
         }
         #endregion
 
 
-        private void label2_Click(object sender, EventArgs e)
+        private void labele2_Click(object sender, EventArgs e)
         {
 
         }
@@ -192,6 +193,11 @@ namespace TallerMecanico_Forms
         }
 
         private void gb_Controles_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gb_Datos_Enter(object sender, EventArgs e)
         {
 
         }

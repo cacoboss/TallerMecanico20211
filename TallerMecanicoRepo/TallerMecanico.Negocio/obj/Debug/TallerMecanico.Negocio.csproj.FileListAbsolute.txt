@@ -9,3 +9,16 @@ C:\Users\ciro_\Clases\2021-1 Associate\TallerMecanico20211\TallerMecanicoRepo\Ta
 C:\Users\ciro_\Clases\2021-1 Associate\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Negocio\obj\Debug\TallerMecanico.Negocio.csproj.CopyComplete
 C:\Users\ciro_\Clases\2021-1 Associate\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Negocio\obj\Debug\TallerMecanico.Negocio.dll
 C:\Users\ciro_\Clases\2021-1 Associate\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Negocio\obj\Debug\TallerMecanico.Negocio.pdb
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Negocio\bin\Debug\TallerMecanico.Negocio.dll
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Negocio\bin\Debug\TallerMecanico.Negocio.pdb
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Negocio\bin\Debug\TallerMecanico.Datos.dll
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Negocio\bin\Debug\TallerMecanico.Entidades.dll
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Negocio\bin\Debug\TallerMecanico.Datos.pdb
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Negocio\bin\Debug\TallerMecanico.Entidades.pdb
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Negocio\obj\Debug\TallerMecanico.Negocio.csprojAssemblyReference.cache
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Negocio\obj\Debug\TallerMecanico.Negocio.csproj.CoreCompileInputs.cache
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Negocio\obj\Debug\TallerMecanico.Negocio.csproj.CopyComplete
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Negocio\obj\Debug\TallerMecanico.Negocio.dll
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Negocio\obj\Debug\TallerMecanico.Negocio.pdb
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Negocio\bin\Debug\System.Data.SqlClient.dll
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Negocio\bin\Debug\System.Data.SqlClient.xml

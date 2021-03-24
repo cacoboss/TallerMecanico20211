@@ -23,7 +23,7 @@ namespace TallerMecanico.Datos
                 if (_cadenaConexion == null)
                 {
                     _cadenaConexion =
-                        ConfigurationManager.ConnectionStrings["Conex2"].ConnectionString;
+                        ConfigurationManager.ConnectionStrings["Conex"].ConnectionString;
                 }
                 return _cadenaConexion;
             }

@@ -9,3 +9,14 @@ C:\Users\ciro_\Clases\2021-1 Associate\TallerMecanico20211\TallerMecanicoRepo\Ta
 C:\Users\ciro_\Clases\2021-1 Associate\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Datos\obj\Debug\TallerMecanico.Datos.csproj.CopyComplete
 C:\Users\ciro_\Clases\2021-1 Associate\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Datos\obj\Debug\TallerMecanico.Datos.dll
 C:\Users\ciro_\Clases\2021-1 Associate\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Datos\obj\Debug\TallerMecanico.Datos.pdb
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Datos\bin\Debug\TallerMecanico.Datos.dll
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Datos\bin\Debug\TallerMecanico.Datos.pdb
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Datos\bin\Debug\System.Data.SqlClient.dll
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Datos\bin\Debug\TallerMecanico.Entidades.dll
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Datos\bin\Debug\TallerMecanico.Entidades.pdb
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Datos\bin\Debug\System.Data.SqlClient.xml
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Datos\obj\Debug\TallerMecanico.Datos.csprojAssemblyReference.cache
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Datos\obj\Debug\TallerMecanico.Datos.csproj.CoreCompileInputs.cache
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Datos\obj\Debug\TallerMecanico.Datos.csproj.CopyComplete
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Datos\obj\Debug\TallerMecanico.Datos.dll
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico.Datos\obj\Debug\TallerMecanico.Datos.pdb

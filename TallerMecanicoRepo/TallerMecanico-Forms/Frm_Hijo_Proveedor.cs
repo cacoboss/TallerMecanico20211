@@ -9,15 +9,16 @@ namespace TallerMecanico_Forms
 {
     public partial class Frm_Hijo_Proveedor : Form
     {
+        private int IndiceProveedorSeleccionado;
         private bool _nuevo { get; set; }
-        private Proveedor proveedor { get; set; }
         public Frm_Hijo_Proveedor()
         {
             InitializeComponent();
-            ActivarBotones(new bool[] {true, true, false, false, true});
+            ActivarBotones(new bool[] { true, true, true, true, true });
             ActivarCajasTexto(grp_DatosEntrada, false);
             CargarDatos();
         }
+    
 
         private void ActivarCajasTexto(Control contenedor, bool estado)
         {
@@ -93,33 +94,94 @@ namespace TallerMecanico_Forms
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            ActivarBotones(new bool[] {true, true, false, false, true});
-            
+            int resultado = -1;
+
             if (_nuevo)
             {
                 //Estoy creando un nuevo Proveedor
-                proveedor = new Proveedor
+                Proveedor  proveedor = new Proveedor
                 {
-                    CodigoProveedor = 0,
                     NombreProveedor = txt_Nombre.Text,
                     DescripcionProveedor = txt_Descripcion.Text
                 };
-                BL_Proveedor blProveedor = new BL_Proveedor();
-                blProveedor.Insertar(proveedor);
+                resultado = new BL_Proveedor().Insertar(proveedor); 
+
             }
             else
             {
-                //Estoy actualizando un Proveedor
-                /*
-                proveedor = new Proveedor
+                //Guardando una modificacion de algo
+                Proveedor proveedor = new Proveedor
                 {
+
                     NombreProveedor = txt_Nombre.Text,
-                    DescripcionProveedor = txt_Descripcion.Text
-                };*/
+                    DescripcionProveedor = txt_Descripcion.Text,
+                    CodigoProveedor = IndiceProveedorSeleccionado
+
+                };
+                resultado = new BL_Proveedor().Actualizar(proveedor);
+                IndiceProveedorSeleccionado = 0;
             }
-            
-            ActivarCajasTexto(grp_DatosEntrada, false);
+
             LimpiarCajaTexto(grp_DatosEntrada);
+            ActivarBotones(new[] { true, true, false, true, true });
+            ActivarCajasTexto(grp_DatosEntrada, false);
+            CargarDatos();
+            grp_DatosEntrada.Text = "Controles Bloqueados";
+        }
+
+
+
+
+        private void btn_Editar_Click(object sender, EventArgs e)
+        {
+
+            _nuevo = false;
+            ActivarBotones(new[] { false, false, true, false, true });
+            ActivarCajasTexto(grp_DatosEntrada, true);
+            grp_DatosEntrada.Text = "Editando Proveedor  Existente";
+            LimpiarCajaTexto(grp_DatosEntrada);
+            txt_Nombre.Focus();
+
+            IndiceProveedorSeleccionado = (int)(dgv_Datos[0, dgv_Datos.CurrentRow.Index].Value);
+            Proveedor p = new BL_Proveedor().TraerPorID(IndiceProveedorSeleccionado);
+            txt_Nombre.Text = p.NombreProveedor;
+            txt_Descripcion.Text = p.DescripcionProveedor;
+
+
+            //
+
+          
+        }
+
+        private void btn_Eliminar_Click(object sender, EventArgs e)
+        {
+            {
+
+                if (dgv_Datos.RowCount > 0)
+                {
+                    IndiceProveedorSeleccionado = (int)(dgv_Datos[0, dgv_Datos.CurrentRow.Index].Value);
+                    Proveedor p = new BL_Proveedor().TraerPorID(IndiceProveedorSeleccionado);
+                    new BL_Proveedor().Eliminar(p.CodigoProveedor);
+                    LimpiarCajaTexto(grp_DatosEntrada);
+                    ActivarBotones(new[] { true, true, true, true, true });
+                    ActivarCajasTexto(grp_DatosEntrada, false);
+                    CargarDatos();
+
+                }
+            }
+
+
+
+        }
+
+        private void btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void Frm_Hijo_Proveedor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

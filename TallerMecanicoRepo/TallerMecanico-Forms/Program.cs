@@ -16,7 +16,8 @@ namespace TallerMecanico_Forms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_InicioSesion());
+            Application.Run(new Frm_Hijo_Producto());
         }
+
     }
 }
