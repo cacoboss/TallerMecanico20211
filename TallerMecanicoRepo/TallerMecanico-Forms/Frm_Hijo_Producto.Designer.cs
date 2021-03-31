@@ -78,7 +78,7 @@ namespace TallerMecanico_Forms
             this.dgv_Productos.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_Productos.Name = "dgv_Productos";
             this.dgv_Productos.RowTemplate.Height = 24;
-            this.dgv_Productos.Size = new System.Drawing.Size(878, 124);
+            this.dgv_Productos.Size = new System.Drawing.Size(845, 124);
             this.dgv_Productos.TabIndex = 0;
             // 
             // ID_Producto

@@ -109,7 +109,7 @@ namespace TallerMecanico.Datos
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@ID", proveedor.CodigoProveedor);
                     cmd.Parameters.AddWithValue("@NOMBRE", proveedor.NombreProveedor);
-                    cmd.Parameters.AddWithValue("@DESRCIPCION", proveedor.DescripcionProveedor);
+                    cmd.Parameters.AddWithValue("@DESCRIPCION", proveedor.DescripcionProveedor);
                     ID = cmd.ExecuteNonQuery();
                 }
             }

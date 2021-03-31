@@ -123,7 +123,8 @@ namespace TallerMecanico_Forms
                 for (int i = 0; i < proveedorproducto.Count; i++)
                 {
                     ProveedorProductos p = proveedorproducto[i];
-                    dgv_ProductosProveedores.Rows.Add(
+                     dgv_ProductosProveedores.Rows.Add(
+                        p.Consecutivo,
                         ObtenerNombreProveedor(p.CodigoProveedor),
                         ObtenerNombreProducto(p.CodigoProveedor)
                         );
@@ -230,13 +231,13 @@ namespace TallerMecanico_Forms
             else
             {
                 //Guardando una modificacion de algo
-                ProveedorProductos productoproducto = new ProveedorProductos
+                ProveedorProductos proveedorproducto = new ProveedorProductos
                 {
                     CodigoProveedor = ProveedorSeleccionado((string)cmb_Proveedor.SelectedItem),
                     CodigoProducto = ProductoSeleccionado((string)cmb_Producto.SelectedItem),
                     Consecutivo = IndiceProductoProveedorSeleccionado
                 };
-                resultado = new BL_ProveedorProductos().Actualizar(productoproducto);
+                resultado = new BL_ProveedorProductos().Actualizar(proveedorproducto);
                 IndiceProductoProveedorSeleccionado = 0;
             }
 
@@ -268,6 +269,9 @@ namespace TallerMecanico_Forms
 
             IndiceProductoProveedorSeleccionado = (int)(dgv_ProductosProveedores[0, dgv_ProductosProveedores.CurrentRow.Index].Value);
             ProveedorProductos p = new BL_ProveedorProductos().TraerPorId(IndiceProductoProveedorSeleccionado);
+            cmb_Producto.SelectedValue = p.CodigoProducto;
+            cmb_Proveedor.SelectedValue = p.CodigoProveedor;
+
 
         }
 
@@ -275,16 +279,21 @@ namespace TallerMecanico_Forms
         {
             if (dgv_ProductosProveedores.RowCount > 0)
             {
-                IndiceProductoProveedorSeleccionado = (int)(dgv_ProductosProveedores[0, dgv_ProductosProveedores.CurrentRow.Index].Value);
+                IndiceProductoProveedorSeleccionado = (int)dgv_ProductosProveedores[0, dgv_ProductosProveedores.CurrentRow.Index].Value;
                 ProveedorProductos p = new BL_ProveedorProductos().TraerPorId(IndiceProductoProveedorSeleccionado);
                 new BL_ProveedorProductos().Eliminar(p.Consecutivo);
                 LimpiarCajaTexto(grp_Controles);
-                ActivarBotones(new[] { true, true, true, true, true });
+                ActivarBotones(new[] { true, true, false, true, true });
                 ActivarCajasTexto(grp_Controles, false);
                 CargarDatos();
             }
         }
 
+
+        private void PROVEEDOR_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
