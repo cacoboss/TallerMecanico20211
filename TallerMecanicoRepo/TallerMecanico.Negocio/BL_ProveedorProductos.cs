@@ -45,5 +45,10 @@ namespace TallerMecanico.Negocio
             DAO_ProveedorProductos dao_proveedorproductos = new DAO_ProveedorProductos();
             return dao_proveedorproductos.Eliminar(Id);
         }
+
+        public List<Producto> BuscarPorNombre(string nombre)
+        {
+            return new DAO_ProveedorProductos().BuscarPorNombre(nombre);
+        }
     }
 }

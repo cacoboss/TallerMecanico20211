@@ -23,6 +23,7 @@ namespace TallerMecanico_Forms
 
         private int IndiceProductoProveedorSeleccionado;
 
+
         public Frm_ProductoProveedor()
         {
             InitializeComponent();
@@ -291,6 +292,21 @@ namespace TallerMecanico_Forms
 
 
         private void PROVEEDOR_Click(object sender, EventArgs e)
+        {
+
+        }
+
+    
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            _ProductoDisponibles = new BL_Producto().BuscarPorNombre(txt_BuscarXNombre.Text);
+
+            cmb_BuscarXNombre.DataSource = _ProductoDisponibles;
+            cmb_BuscarXNombre.ValueMember = "CodigoProducto";
+            cmb_BuscarXNombre.DisplayMember = "Nombre";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
