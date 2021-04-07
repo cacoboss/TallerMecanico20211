@@ -42,7 +42,7 @@
             this.dgv_ProductosProveedores = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.provee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Produc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grp_Controles.SuspendLayout();
             this.grp_Botones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ProductosProveedores)).BeginInit();
@@ -71,7 +71,6 @@
             this.PROVEEDOR.Size = new System.Drawing.Size(79, 24);
             this.PROVEEDOR.TabIndex = 5;
             this.PROVEEDOR.Text = "PROVEEDOR";
-            this.PROVEEDOR.Click += new System.EventHandler(this.PROVEEDOR_Click);
             // 
             // cmb_Proveedor
             // 
@@ -90,7 +89,6 @@
             this.cmb_Producto.Name = "cmb_Producto";
             this.cmb_Producto.Size = new System.Drawing.Size(171, 21);
             this.cmb_Producto.TabIndex = 3;
-            this.cmb_Producto.SelectedIndexChanged += new System.EventHandler(this.cmb_Producto_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -194,7 +192,7 @@
             this.dgv_ProductosProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.provee,
-            this.Producto});
+            this.Produc});
             this.dgv_ProductosProveedores.Location = new System.Drawing.Point(13, 216);
             this.dgv_ProductosProveedores.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_ProductosProveedores.Name = "dgv_ProductosProveedores";
@@ -212,10 +210,10 @@
             this.provee.HeaderText = "Proveedor";
             this.provee.Name = "provee";
             // 
-            // Producto
+            // Produc
             // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
+            this.Produc.HeaderText = "Producto";
+            this.Produc.Name = "Produc";
             // 
             // Frm_ProductoProveedor
             // 
@@ -250,6 +248,6 @@
         private System.Windows.Forms.DataGridView dgv_ProductosProveedores;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn provee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Produc;
     }
 }

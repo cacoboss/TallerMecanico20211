@@ -124,11 +124,11 @@ namespace TallerMecanico_Forms
                 for (int i = 0; i < proveedorproducto.Count; i++)
                 {
                     ProveedorProductos p = proveedorproducto[i];
-                     dgv_ProductosProveedores.Rows.Add(
-                        p.Consecutivo,
-                        ObtenerNombreProveedor(p.CodigoProveedor),
-                        ObtenerNombreProducto(p.CodigoProveedor)
-                        );
+                    dgv_ProductosProveedores.Rows.Add(
+                       p.Consecutivo,
+                       ObtenerNombreProveedor(p.CodigoProveedor),
+                       ObtenerNombreProducto(p.CodigoProveedor)
+                       );
                 }
             }
         }
@@ -196,10 +196,6 @@ namespace TallerMecanico_Forms
             return s;
         }
 
-        private void cmb_Producto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_Nuevo_Click(object sender, EventArgs e)
         {
@@ -290,29 +286,6 @@ namespace TallerMecanico_Forms
             }
         }
 
-
-        private void PROVEEDOR_Click(object sender, EventArgs e)
-        {
-
-        }
-
-    
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            _ProductoDisponibles = new BL_Producto().BuscarPorNombre(txt_BuscarXNombre.Text);
-
-            cmb_BuscarXNombre.DataSource = _ProductoDisponibles;
-            cmb_BuscarXNombre.ValueMember = "CodigoProducto";
-            cmb_BuscarXNombre.DisplayMember = "Nombre";
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+ 
     }
-
-
-
-
 }

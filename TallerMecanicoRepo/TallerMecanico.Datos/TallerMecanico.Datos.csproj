@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO_Categoria.cs" />
+    <Compile Include="DAO_Cliente.cs" />
     <Compile Include="DAO_CorreoElectronico.cs" />
     <Compile Include="DAO_Producto.cs" />
     <Compile Include="DAO_Proveedor.cs" />

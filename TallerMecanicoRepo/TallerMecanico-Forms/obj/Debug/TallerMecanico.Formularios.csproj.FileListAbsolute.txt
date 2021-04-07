@@ -45,3 +45,4 @@ C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecani
 C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\bin\Debug\System.Data.SqlClient.dll
 C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\bin\Debug\System.Data.SqlClient.xml
 C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico_Forms.Frm_ProductoProveedor.resources
+C:\Users\yerson\Source\Repos\TallerMecanico20211\TallerMecanicoRepo\TallerMecanico-Forms\obj\Debug\TallerMecanico_Forms.Frm_Hijo_Cliente.resources

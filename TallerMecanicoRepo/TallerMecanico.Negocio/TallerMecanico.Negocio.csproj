@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL_Categoria.cs" />
+    <Compile Include="BL_Cliente.cs" />
     <Compile Include="BL_CorreoElectronico.cs" />
     <Compile Include="BL_Producto.cs" />
     <Compile Include="BL_Proveedor.cs" />
